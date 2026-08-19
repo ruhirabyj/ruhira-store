@@ -117,27 +117,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const sizeButtons =
         document.querySelectorAll(".size-button");
     
-    
     let selectedSize = null;
     
-    
-    /* Disable unavailable sizes and select
-       the first available size */
     
     sizeButtons.forEach(button => {
     
         const size = button.textContent.trim();
     
-        if (!product.stock[size] || product.stock[size] <= 0) {
+        if (product.stock[size] === 0) {
     
-            button.classList.add("unavailable");
             button.disabled = true;
-    
-        } else if (selectedSize === null) {
-    
-            button.classList.add("active");
-    
-            selectedSize = size;
+            button.classList.add("disabled");
     
         }
     
@@ -147,6 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (button.disabled) {
                 return;
             }
+    
     
             sizeButtons.forEach(sizeButton => {
                 sizeButton.classList.remove("active");
