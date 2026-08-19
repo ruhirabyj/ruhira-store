@@ -965,3 +965,21 @@ body {
     letter-spacing: 1px;
     opacity: 0.6;
 }
+
+/* ABOUT RUHIRA INSTAGRAM REEL */
+
+.about-section {
+    padding: 80px 8%;
+}
+
+.about-video {
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto 0;
+}
+
+.about-video .instagram-media {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+}
