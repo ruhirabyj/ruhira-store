@@ -1,0 +1,42 @@
+/* PAYMENT PAGE STYLES */
+
+/* QR CODE */
+.payment-qr img,
+.upi-qr img,
+.qr-code img {
+    width: 320px;
+    max-width: 90%;
+    height: auto;
+    display: block;
+    margin: 25px auto;
+}
+
+/* PAYMENT DETAILS */
+.payment-details,
+.upi-details {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+/* UPI ID */
+.upi-id {
+    font-size: 24px;
+}
+
+/* COPY BUTTON */
+.copy-button {
+    font-size: 16px;
+    padding: 8px 16px;
+}
+
+/* PAYMENT NOTE */
+.payment-note {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+/* I HAVE PAID BUTTON */
+.paid-button {
+    font-size: 18px;
+    padding: 15px 35px;
+}
