@@ -74,7 +74,7 @@ body {
     background: #fbfaf7;
 
     display: grid;
-    grid-template-columns: 180px 1fr 180px;
+    grid-template-columns: 150px auto 1fr;
 
     align-items: center;
 
@@ -83,27 +83,21 @@ body {
     position: relative;
     z-index: 10;
 
-    padding: 0 45px;
+    padding: 0 50px;
 }
 
 
 /* LOGO */
 
 .brand-logo {
-    position: absolute;
-    left: calc(50% - 360px);
-    top: 50%;
-    transform: translateY(-50%);
-
-    width: 115px;
-    height: auto;
+    width: 130px;
+    margin: 0;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
     text-decoration: none;
-    margin: 0;
 }
 
 .brand-logo img {
