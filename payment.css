@@ -1,42 +1,238 @@
-/* PAYMENT PAGE STYLES */
+/* =========================
+   PAYMENT PAGE
+========================= */
 
-/* QR CODE */
-.payment-qr img,
-.upi-qr img,
-.qr-code img {
-    width: 320px;
-    max-width: 90%;
-    height: auto;
+.payment-page {
+    min-height: calc(100vh - 150px);
+    padding: 60px 20px 80px;
+    background: #f8f6f1;
+}
+
+
+.payment-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.payment-label {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin: 0 0 12px;
+}
+
+
+.payment-container h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 48px;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0;
+}
+
+
+.payment-ornament {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0 30px;
+}
+
+
+.payment-ornament span {
+    width: 70px;
+    height: 1px;
+    background: var(--gold);
+}
+
+
+.payment-ornament b {
+    color: var(--gold);
+    font-size: 20px;
+}
+
+
+/* =========================
+   ORDER DETAILS
+========================= */
+
+.payment-order-number {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: var(--text);
+    margin-bottom: 10px;
+}
+
+
+.payment-total {
+    margin-bottom: 30px;
+}
+
+
+.payment-total span {
     display: block;
-    margin: 25px auto;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    color: #777;
+    margin-bottom: 6px;
 }
 
-/* PAYMENT DETAILS */
-.payment-details,
-.upi-details {
-    font-size: 20px;
-    line-height: 1.5;
+
+.payment-total strong {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 38px;
+    color: var(--text);
 }
 
-/* UPI ID */
-.upi-id {
-    font-size: 24px;
+
+/* =========================
+   QR CODE
+========================= */
+
+.upi-qr-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 25px;
 }
 
-/* COPY BUTTON */
-.copy-button {
+
+.upi-qr-container img {
+    display: block;
+    width: 320px !important;
+    height: 320px !important;
+    max-width: 90vw;
+    object-fit: contain;
+}
+
+
+/* =========================
+   SCAN TEXT
+========================= */
+
+.scan-text {
+    font-family: "Montserrat", sans-serif;
     font-size: 16px;
-    padding: 8px 16px;
+    color: var(--text);
+    margin: 10px 0 18px;
 }
 
-/* PAYMENT NOTE */
-.payment-note {
-    font-size: 20px;
-    line-height: 1.5;
+
+/* =========================
+   UPI ID
+========================= */
+
+.upi-id-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
 }
 
-/* I HAVE PAID BUTTON */
-.paid-button {
+
+#upi-id {
+    font-family: "Montserrat", sans-serif;
     font-size: 18px;
-    padding: 15px 35px;
+    font-weight: 500;
+    color: var(--text);
+}
+
+
+#copy-upi {
+    border: 1px solid var(--text);
+    background: transparent;
+    color: var(--text);
+    padding: 7px 14px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+
+#copy-upi:hover {
+    background: var(--green);
+    color: white;
+}
+
+
+/* =========================
+   INSTRUCTION
+========================= */
+
+.payment-instruction {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+    margin: 0 auto 25px;
+    max-width: 500px;
+}
+
+
+/* =========================
+   PAID BUTTON
+========================= */
+
+.paid-button {
+    border: none;
+    background: var(--green);
+    color: #ffffff;
+    padding: 16px 40px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+
+.paid-button:hover {
+    background: var(--gold);
+}
+
+
+.paid-button span {
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .payment-page {
+        padding: 45px 15px 60px;
+    }
+
+
+    .payment-container h1 {
+        font-size: 38px;
+    }
+
+
+    .upi-qr-container img {
+        width: 280px !important;
+        height: 280px !important;
+    }
+
+
+    .upi-id-container {
+        flex-wrap: wrap;
+    }
+
 }
