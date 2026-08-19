@@ -18,14 +18,13 @@ const products = {
         id: "RKS102",
         name: "Forest Grove",
         price: 2199,
-
         images: [
-            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125243/RKS102/IMG_1749.jpg",
-            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125243/RKS102/IMG_1755.jpg",
-            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125243/RKS102/IMG_1704.jpg",
-            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125243/RKS102/IMG_1707.jpg",
-            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125243/RKS102/IMG_1713.jpg",
-            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125243/RKS102/IMG_1710.jpg"
+            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125243/IMG_1749.jpg",
+            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125243/IMG_1755.jpg",
+            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125243/IMG_1704.jpg",
+            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125243/IMG_1707.jpg",
+            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125243/IMG_1713.jpg",
+            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125243/IMG_1710.jpg"
         ]
     },
 
@@ -35,11 +34,11 @@ const products = {
         price: 2199,
 
         images: [
-            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125256/RKS103/IMG_1794.jpg",
-            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125256/RKS103/IMG_1791.jpg",
-            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125256/RKS103/IMG_1792.jpg",
-            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125256/RKS103/IMG_1790.jpg",
-            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125256/RKS103/IMG_1788.jpg"
+            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125256/IMG_1794.jpg",
+            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125256/IMG_1791.jpg",
+            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125256/IMG_1792.jpg",
+            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125256/IMG_1790.jpg",
+            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125256/IMG_1788.jpg"
         ]
     },
 
@@ -49,11 +48,11 @@ const products = {
         price: 2299,
 
         images: [
-            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125275/RKS104/IMG_1636.jpg",
-            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125275/RKS104/IMG_1642.jpg",
-            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125275/RKS104/IMG_1640.jpg",
-            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125275/RKS104/IMG_1633.jpg",
-            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125275/RKS104/IMG_1630.jpg"
+            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125275/IMG_1636.jpg",
+            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125275/IMG_1642.jpg",
+            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125275/IMG_1640.jpg",
+            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125275/IMG_1633.jpg",
+            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125275/IMG_1630.jpg"
         ]
     },
 
@@ -63,12 +62,12 @@ const products = {
         price: 2799,
 
         images: [
-            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125294/RKS105/IMG_1577.jpg",
-            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125294/RKS105/IMG_1601.jpg",
-            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125294/RKS105/IMG_1517.jpg",
-            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125294/RKS105/IMG_1519.jpg",
-            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125294/RKS105/IMG_1511.jpg",
-            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125294/RKS105/IMG_1514.jpg"
+            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125294/IMG_1577.jpg",
+            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125294/IMG_1601.jpg",
+            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125294/IMG_1517.jpg",
+            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125294/IMG_1519.jpg",
+            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125294/IMG_1511.jpg",
+            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125294/IMG_1514.jpg"
         ]
     }
 
