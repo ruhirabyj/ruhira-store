@@ -4,7 +4,14 @@ const products = {
         id: "RKS101",
         name: "Pink Bloom",
         price: 2199,
-
+        stock: {
+            S: 0,
+            M: 1,
+            L: 1,
+            XL: 1,
+            XXL: 1,
+            XXXL: 1
+        },
         images: [
             "https://res.cloudinary.com/kipwuap2/image/upload/v1787125875/IMG_1424.jpg",
             "https://res.cloudinary.com/kipwuap2/image/upload/v1787125875/IMG_1423.jpg",
@@ -18,6 +25,14 @@ const products = {
         id: "RKS102",
         name: "Forest Grove",
         price: 2199,
+        stock: {
+            S: 0,
+            M: 0,
+            L: 1,
+            XL: 1,
+            XXL: 1,
+            XXXL: 1
+        },
         images: [
             "https://res.cloudinary.com/kipwuap2/image/upload/v1787125243/IMG_1710.jpg",
             "https://res.cloudinary.com/kipwuap2/image/upload/v1787125243/IMG_1755.jpg",
@@ -32,7 +47,14 @@ const products = {
         id: "RKS103",
         name: "Amber Glow",
         price: 2199,
-
+        stock: {
+            S: 0,
+            M: 1,
+            L: 1,
+            XL: 1,
+            XXL: 1,
+            XXXL: 1
+        },
         images: [
             "https://res.cloudinary.com/kipwuap2/image/upload/v1787125256/IMG_1788.jpg",
             "https://res.cloudinary.com/kipwuap2/image/upload/v1787125256/IMG_1791.jpg",
@@ -46,7 +68,14 @@ const products = {
         id: "RKS104",
         name: "Midnight Noir",
         price: 2299,
-
+        stock: {
+            S: 0,
+            M: 1,
+            L: 1,
+            XL: 1,
+            XXL: 0,
+            XXXL: 1
+        },
         images: [
             "https://res.cloudinary.com/kipwuap2/image/upload/v1787125275/IMG_1636.jpg",
             "https://res.cloudinary.com/kipwuap2/image/upload/v1787125275/IMG_1642.jpg",
@@ -60,7 +89,14 @@ const products = {
         id: "RKS105",
         name: "Ivory Mist",
         price: 2799,
-
+        stock: {
+            S: 0,
+            M: 1,
+            L: 1,
+            XL: 2,
+            XXL: 0,
+            XXXL: 0
+        },
         images: [
             "https://res.cloudinary.com/kipwuap2/image/upload/v1787125294/IMG_1577.jpg",
             "https://res.cloudinary.com/kipwuap2/image/upload/v1787125294/IMG_1601.jpg",
