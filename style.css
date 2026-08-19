@@ -69,14 +69,12 @@ body {
 /* =========================
    NAVBAR
 ========================= */
-
 .navbar {
-    height: 122px;
-    min-height: 0;
+    min-height: 180px;
     background: #fbfaf7;
 
     display: grid;
-    grid-template-columns: 210px 1fr 210px;
+    grid-template-columns: 310px 1fr 250px;
 
     align-items: center;
 
@@ -87,16 +85,9 @@ body {
 }
 
 /* LOGO */
-
 .brand-logo {
-    position: absolute;
-    left: 55px;
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    width: 145px;
-    height: 105px;
+    width: 250px;
+    margin-left: 50px;
 
     display: flex;
     align-items: center;
@@ -106,11 +97,14 @@ body {
 }
 
 .brand-logo img {
-    width: 145px;
-    height: auto;
+    width: 210px;
+    height: 150px;
 
     display: block;
+
     object-fit: contain;
+    object-position: center;
+
     filter: none;
 }
 
