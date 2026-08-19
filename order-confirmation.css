@@ -1,0 +1,499 @@
+/* =========================
+   ORDER CONFIRMATION PAGE
+========================= */
+
+.confirmation-page {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 65px 50px 90px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.confirmation-hero {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 65px;
+}
+
+.confirmation-icon {
+    width: 62px;
+    height: 62px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+
+    color: var(--green);
+
+    font-size: 28px;
+}
+
+.confirmation-small-title {
+    color: var(--gold);
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+}
+
+.confirmation-hero h1 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 52px;
+    font-weight: 500;
+
+    color: var(--text);
+
+    margin-bottom: 18px;
+}
+
+
+/* ORNAMENT */
+
+.confirmation-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-bottom: 22px;
+}
+
+.confirmation-ornament span {
+    width: 65px;
+    height: 1px;
+
+    background: var(--gold);
+}
+
+.confirmation-ornament b {
+    color: var(--gold);
+
+    font-size: 20px;
+    font-weight: normal;
+}
+
+
+/* MESSAGE */
+
+.confirmation-message {
+    max-width: 550px;
+
+    margin: 0 auto;
+
+    color: #6e7370;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 21px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.confirmation-content {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) 360px;
+
+    gap: 65px;
+
+    align-items: start;
+}
+
+
+/* =========================
+   ORDER CARD
+========================= */
+
+.confirmation-order-card {
+    background: #f8f6f1;
+
+    border: 1px solid #e3ddd2;
+
+    padding: 40px;
+}
+
+
+/* HEADER */
+
+.order-card-header {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.order-card-header p {
+    color: #888;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 1.4px;
+
+    margin-bottom: 7px;
+}
+
+.order-card-header h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 30px;
+    font-weight: 600;
+
+    color: var(--text);
+}
+
+
+/* DIVIDER */
+
+.confirmation-divider {
+    height: 1px;
+
+    background: #ded8cd;
+
+    margin: 30px 0;
+}
+
+
+/* =========================
+   CONFIRMATION SECTIONS
+========================= */
+
+.confirmation-section h3 {
+    color: var(--text);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 24px;
+    font-weight: 600;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   ORDER ITEMS
+========================= */
+
+.confirmation-items {
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.confirmation-item {
+    display: grid;
+
+    grid-template-columns: 75px minmax(0, 1fr) auto;
+
+    gap: 16px;
+
+    align-items: center;
+}
+
+.confirmation-item-image {
+    width: 75px;
+    height: 95px;
+
+    overflow: hidden;
+
+    background: #ece7dc;
+}
+
+.confirmation-item-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center top;
+}
+
+
+.confirmation-item-info h4 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 22px;
+    font-weight: 600;
+
+    color: var(--text);
+
+    margin-bottom: 5px;
+}
+
+.confirmation-item-info p {
+    color: #777;
+
+    font-size: 9px;
+
+    letter-spacing: 0.6px;
+
+    line-height: 1.5;
+}
+
+.confirmation-item-price {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    color: var(--text);
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   DELIVERY ADDRESS
+========================= */
+
+.delivery-address {
+    color: #626966;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 19px;
+
+    line-height: 1.6;
+}
+
+.delivery-address strong {
+    color: var(--text);
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   ORDER INFO
+========================= */
+
+.order-info {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.order-info div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.order-info span {
+    color: #888;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+}
+
+.order-info strong {
+    color: var(--text);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   WHAT HAPPENS NEXT
+========================= */
+
+.confirmation-next {
+    padding-top: 10px;
+}
+
+.confirmation-next > h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 32px;
+    font-weight: 500;
+
+    color: var(--text);
+
+    margin-bottom: 30px;
+}
+
+
+.next-steps {
+    display: flex;
+    flex-direction: column;
+
+    gap: 28px;
+
+    margin-bottom: 40px;
+}
+
+.next-step {
+    display: grid;
+
+    grid-template-columns: 40px minmax(0, 1fr);
+
+    gap: 15px;
+}
+
+.step-number {
+    color: var(--gold);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.next-step h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 22px;
+    font-weight: 600;
+
+    color: var(--text);
+
+    margin-bottom: 5px;
+}
+
+.next-step p {
+    color: #777;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   CONTINUE SHOPPING BUTTON
+========================= */
+
+.continue-shopping-button {
+    width: 100%;
+
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--green);
+
+    color: #e0c78f;
+
+    text-decoration: none;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    transition: 0.2s ease;
+}
+
+.continue-shopping-button:hover {
+    background: #0a413b;
+}
+
+.continue-shopping-button span {
+    margin-left: 10px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+    .confirmation-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .confirmation-next {
+        max-width: 700px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .confirmation-page {
+        padding: 40px 20px 65px;
+    }
+
+    .confirmation-hero {
+        margin-bottom: 45px;
+    }
+
+    .confirmation-hero h1 {
+        font-size: 42px;
+    }
+
+    .confirmation-message {
+        font-size: 19px;
+    }
+
+    .confirmation-order-card {
+        padding: 25px 20px;
+    }
+
+    .order-card-header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .confirmation-item {
+        grid-template-columns: 65px minmax(0, 1fr);
+    }
+
+    .confirmation-item-image {
+        width: 65px;
+        height: 85px;
+    }
+
+    .confirmation-item-price {
+        grid-column: 2;
+    }
+
+    .order-info {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .confirmation-next > h2 {
+        font-size: 30px;
+    }
+
+}
