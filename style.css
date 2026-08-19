@@ -1,928 +1,336 @@
-:root {
-  --green: #062e28;
-  --green-dark: #03251f;
-  --gold: #ad8950;
-  --gold-light: #c9a66b;
-  --cream: #f8f4ed;
-  --cream-dark: #efe6d7;
-  --text: #182e29;
-  --black: #1e2423;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: "DM Sans", sans-serif;
-  background: var(--cream);
-  color: var(--text);
-  overflow-x: hidden;
-}
-
-
-/* =====================================================
-   TOP BAR
-===================================================== */
-
-.announcement-bar {
-  height: 49px;
-  background: var(--green-dark);
-  color: #d0b176;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 58px;
-
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.8px;
-}
-
-.announcement-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  white-space: nowrap;
-}
-
-.announcement-icon {
-  color: #d4ae67;
-  font-size: 17px;
-}
-
-.truck {
-  font-size: 19px;
-  transform: rotate(180deg);
-}
-
-.announcement-divider {
-  width: 1px;
-  height: 16px;
-  background: #b08c50;
-}
-
-
-/* =====================================================
-   HEADER
-===================================================== */
-
-.main-header {
-  height: 171px;
-  background: #faf8f4;
-
-  display: grid;
-  grid-template-columns: 330px 1fr 220px;
-
-  align-items: center;
-
-  padding: 0 72px;
-
-  border-bottom: 1px solid #ded9d0;
-}
-
-
-/* =====================================================
-   LOGO
-===================================================== */
-
-.logo-area {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  width: 250px;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruhira | The Art of Ethnic Elegance</title>
 
-.logo-symbol {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 78px;
-  line-height: 68px;
-  font-weight: 500;
-  color: #a98447;
+    <link rel="stylesheet" href="style.css">
 
-  position: relative;
-}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
 
-.logo-symbol::before {
-  content: "❧";
-  position: absolute;
-  font-size: 38px;
-  left: -21px;
-  top: -4px;
-  color: #a98447;
-  transform: rotate(-22deg);
-}
+<body>
 
-.logo-symbol::after {
-  content: "❧";
-  position: absolute;
-  font-size: 27px;
-  right: -16px;
-  top: 25px;
-  color: #a98447;
-  transform: rotate(90deg);
-}
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="announcement-bar">
+        <div class="announcement-item">
+            <span>★</span>
+            <span>PREMIUM ETHNIC WEAR</span>
+        </div>
 
-.brand-name {
-  margin-top: 7px;
+        <div class="announcement-divider"></div>
 
-  font-family: "Cormorant Garamond", serif;
-  font-size: 42px;
-  font-weight: 500;
-  letter-spacing: 5px;
+        <div class="announcement-item">
+            <span>×</span>
+            <span>ELEGANT. TIMELESS. YOU.</span>
+        </div>
 
-  color: #a98447;
-}
+        <div class="announcement-divider"></div>
 
-.brand-tagline {
-  margin-top: 2px;
+        <div class="announcement-item">
+            <span class="truck">▣</span>
+            <span>FREE SHIPPING PAN INDIA</span>
+        </div>
+    </div>
 
-  display: flex;
-  align-items: center;
-  gap: 7px;
 
-  color: #34413e;
+    <!-- HEADER -->
+    <header class="main-header">
 
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 1.4px;
+        <!-- LOGO -->
+        <div class="brand">
 
-  white-space: nowrap;
-}
+            <div class="brand-symbol">
+                R
+            </div>
 
-.brand-tagline span {
-  display: block;
-  width: 21px;
-  height: 1px;
-  background: #b4935b;
-}
+            <div class="brand-name">RUHIRA</div>
 
+            <div class="brand-tagline">
+                <span></span>
+                <small>THE ART OF ETHNIC ELEGANCE</small>
+                <span></span>
+            </div>
 
-/* =====================================================
-   NAVIGATION
-===================================================== */
+        </div>
 
-.main-nav {
-  height: 100%;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 46px;
-}
+        <!-- NAVIGATION -->
+        <nav class="navigation">
 
-.main-nav a {
-  position: relative;
+            <a href="#" class="active">HOME</a>
 
-  text-decoration: none;
+            <a href="#">
+                SHOP
+                <span class="down-arrow">⌄</span>
+            </a>
 
-  color: #171e1c;
+            <a href="#collection">COLLECTIONS</a>
 
-  font-family: "Cormorant Garamond", serif;
-  font-size: 17px;
-  font-weight: 500;
-  letter-spacing: 0.3px;
+            <a href="#">ABOUT US</a>
 
-  padding: 12px 0;
-}
+            <a href="#">CONTACT</a>
 
-.main-nav a.active::after {
-  content: "";
+        </nav>
 
-  position: absolute;
 
-  left: 0;
-  right: 0;
-  bottom: 0;
+        <!-- HEADER ICONS -->
+        <div class="header-icons">
 
-  height: 1px;
+            <button class="icon-button" aria-label="Search">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="10.8" cy="10.8" r="6.8"></circle>
+                    <line x1="16" y1="16" x2="21" y2="21"></line>
+                </svg>
+            </button>
 
-  background: #b18c4e;
-}
+            <button class="icon-button" aria-label="Account">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="7" r="4"></circle>
+                    <path d="M4 21c.8-5 3.4-7 8-7s7.2 2 8 7"></path>
+                </svg>
+            </button>
 
-.down-arrow {
-  margin-left: 4px;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-}
+            <button class="icon-button cart-button" aria-label="Cart">
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 5h3l1.5 13h10L20 8H7"></path>
+                    <circle cx="10" cy="21" r="1"></circle>
+                    <circle cx="17" cy="21" r="1"></circle>
+                </svg>
 
+                <span class="cart-count">0</span>
+            </button>
 
-/* =====================================================
-   HEADER ICONS
-===================================================== */
+        </div>
 
-.header-icons {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 26px;
-}
+    </header>
 
-.icon-button {
-  position: relative;
 
-  border: none;
-  background: transparent;
+    <!-- HERO SECTION -->
+    <section class="hero">
 
-  width: 38px;
-  height: 38px;
+        <div class="hero-decoration left-decoration"></div>
+        <div class="hero-decoration right-decoration"></div>
 
-  cursor: pointer;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+        <!-- LEFT CONTENT -->
+        <div class="hero-content">
 
-.icon-button svg {
-  width: 25px;
-  height: 25px;
+            <h1>
+                <span>ETHNIC WEAR</span>
+                <span>THAT SPEAKS ELEGANCE</span>
+            </h1>
 
-  stroke: #152320;
-  stroke-width: 1.45;
+            <div class="ornament">
+                <span></span>
+                <b>✽</b>
+                <span></span>
+            </div>
 
-  fill: none;
+            <p>
+                Premium fabrics. Timeless designs.<br>
+                Made for every you.
+            </p>
 
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
+            <a href="#collection" class="shop-now">
+                <span>SHOP NOW</span>
+                <strong>→</strong>
+            </a>
 
-.cart-count {
-  position: absolute;
+        </div>
 
-  right: -2px;
-  top: -4px;
 
-  width: 21px;
-  height: 21px;
+        <!-- RIGHT HERO IMAGE -->
+        <div class="hero-image-area">
 
-  border-radius: 50%;
+            <div class="hero-arch">
 
-  background: var(--green);
+                <img
+                    src="https://res.cloudinary.com/kipwuap2/image/upload/v1787125875/IMG_1424.jpg"
+                    alt="Ruhira Premium Ethnic Wear"
+                >
 
-  color: white;
+            </div>
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+        </div>
 
-  font-size: 10px;
-  font-weight: 600;
-}
+    </section>
 
 
-/* =====================================================
-   HERO
-===================================================== */
+    <!-- PREMIUM COLLECTION -->
+    <section class="collection" id="collection">
 
-.hero-section {
-  position: relative;
+        <div class="collection-heading">
 
-  min-height: 405px;
+            <h2>PREMIUM COLLECTION</h2>
 
-  display: grid;
-  grid-template-columns: 52% 48%;
+            <div class="collection-ornament">
+                <span></span>
+                <b>✽</b>
+                <span></span>
+            </div>
 
-  overflow: hidden;
+            <p>Curated designs for the modern woman</p>
 
-  background:
-    radial-gradient(
-      circle at 24% 43%,
-      rgba(237, 218, 187, 0.9) 0,
-      rgba(247, 241, 232, 0.7) 32%,
-      transparent 61%
-    ),
-    #f8f5ef;
-}
+        </div>
 
 
-/* Decorative leaves */
+        <div class="product-grid">
 
-.hero-decoration {
-  position: absolute;
 
-  z-index: 1;
+            <!-- RKS101 -->
+            <article class="product-card">
 
-  color: #d8b57c;
+                <div class="product-image">
 
-  opacity: 0.42;
+                    <span class="new-badge">NEW</span>
 
-  font-family: Georgia, serif;
+                    <img
+                        src="https://res.cloudinary.com/kipwuap2/image/upload/v1787125875/IMG_1424.jpg"
+                        alt="Pink Bloom"
+                    >
 
-  font-size: 185px;
-}
+                </div>
 
-.left-decoration {
-  left: -53px;
-  top: 60px;
+                <div class="product-info">
+                    <h3>Pink Bloom</h3>
+                    <p>RKS101</p>
+                    <strong>₹2,199</strong>
+                </div>
 
-  transform: rotate(-34deg);
-}
+            </article>
 
-.right-decoration {
-  right: -60px;
-  top: 72px;
 
-  transform: rotate(132deg);
-}
+            <!-- RKS102 -->
+            <article class="product-card">
 
+                <div class="product-image">
 
-/* Hero text */
+                    <span class="new-badge">NEW</span>
 
-.hero-content {
-  position: relative;
-  z-index: 2;
+                    <img
+                        src="https://res.cloudinary.com/kipwuap2/image/upload/v1787125243/IMG_1749.jpg"
+                        alt="Forest Grove"
+                    >
 
-  display: flex;
-  flex-direction: column;
+                </div>
 
-  align-items: center;
-  justify-content: center;
+                <div class="product-info">
+                    <h3>Forest Grove</h3>
+                    <p>RKS102</p>
+                    <strong>₹2,199</strong>
+                </div>
 
-  padding-bottom: 2px;
+            </article>
 
-  text-align: center;
-}
 
-.hero-content h1 {
-  font-family: "Cormorant Garamond", serif;
+            <!-- RKS103 -->
+            <article class="product-card">
 
-  color: #15342d;
+                <div class="product-image">
 
-  font-size: 52px;
-  font-weight: 500;
+                    <span class="new-badge">NEW</span>
 
-  line-height: 1.02;
+                    <img
+                        src="https://res.cloudinary.com/kipwuap2/image/upload/v1787125256/IMG_1794.jpg"
+                        alt="Amber Glow"
+                    >
 
-  letter-spacing: 1.2px;
-}
+                </div>
 
-.ornament {
-  margin: 26px 0 21px;
+                <div class="product-info">
+                    <h3>Amber Glow</h3>
+                    <p>RKS103</p>
+                    <strong>₹2,199</strong>
+                </div>
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+            </article>
 
-  gap: 11px;
 
-  color: #b08a4d;
+            <!-- RKS104 -->
+            <article class="product-card">
 
-  font-size: 26px;
-}
+                <div class="product-image">
 
-.ornament span {
-  display: block;
+                    <span class="new-badge">NEW</span>
 
-  width: 75px;
-  height: 1px;
+                    <img
+                        src="https://res.cloudinary.com/kipwuap2/image/upload/v1787125275/IMG_1636.jpg"
+                        alt="Midnight Noir"
+                    >
 
-  background: #c3a16d;
-}
+                </div>
 
-.hero-content p {
-  color: #3f4644;
+                <div class="product-info">
+                    <h3>Midnight Noir</h3>
+                    <p>RKS104</p>
+                    <strong>₹2,299</strong>
+                </div>
 
-  font-family: "Cormorant Garamond", serif;
+            </article>
 
-  font-size: 20px;
 
-  line-height: 1.22;
+            <!-- RKS105 -->
+            <article class="product-card">
 
-  letter-spacing: 0.3px;
-}
+                <div class="product-image">
 
-.shop-now-button {
-  margin-top: 24px;
+                    <span class="new-badge">NEW</span>
 
-  width: 211px;
-  height: 48px;
+                    <img
+                        src="https://res.cloudinary.com/kipwuap2/image/upload/v1787125294/IMG_1577.jpg"
+                        alt="Premium Kurta Set"
+                    >
 
-  background: var(--green);
+                </div>
 
-  color: #dfc183;
+                <div class="product-info">
+                    <h3>Premium Kurta Set</h3>
+                    <p>RKS105</p>
+                    <strong>₹2,799</strong>
+                </div>
 
-  text-decoration: none;
+            </article>
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
-  gap: 22px;
+        </div>
 
-  border-radius: 3px;
+    </section>
 
-  font-family: "Cormorant Garamond", serif;
 
-  font-size: 18px;
-  font-weight: 600;
+    <!-- BOTTOM FEATURES -->
+    <section class="features">
 
-  letter-spacing: 1px;
+        <div class="feature">
+            <span class="feature-icon">♧</span>
+            <span>PREMIUM QUALITY</span>
+        </div>
 
-  transition: 0.25s ease;
-}
+        <div class="feature-divider"></div>
 
-.shop-now-button:hover {
-  background: #0a4037;
-  transform: translateY(-2px);
-}
+        <div class="feature">
+            <span class="feature-icon">↻</span>
+            <span>EASY RETURNS</span>
+        </div>
 
-.shop-now-button span {
-  font-size: 24px;
-  line-height: 1;
-}
+        <div class="feature-divider"></div>
 
+        <div class="feature">
+            <span class="feature-icon">▣</span>
+            <span>SECURE PAYMENTS</span>
+        </div>
 
-/* =====================================================
-   HERO IMAGE
-===================================================== */
+        <div class="feature-divider"></div>
 
-.hero-image-area {
-  position: relative;
+        <div class="feature">
+            <span class="feature-icon">♧</span>
+            <span>CUSTOMER SUPPORT</span>
+        </div>
 
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
+    </section>
 
-  min-height: 405px;
-
-  overflow: hidden;
-}
-
-.arch-background {
-  position: absolute;
-
-  width: 405px;
-  height: 485px;
-
-  bottom: -35px;
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  border-radius: 205px 205px 0 0;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(194, 160, 110, 0.62),
-      rgba(238, 220, 189, 0.8)
-    );
-
-  box-shadow:
-    inset 12px 0 0 rgba(173, 137, 80, 0.13),
-    inset -4px 0 0 rgba(255,255,255,0.35);
-}
-
-.hero-product-image {
-  position: relative;
-  z-index: 2;
-
-  width: 315px;
-  height: 405px;
-
-  object-fit: cover;
-  object-position: center 28%;
-
-  border-radius: 145px 145px 0 0;
-
-  filter: brightness(1.03) saturate(0.96);
-}
-
-
-/* =====================================================
-   COLLECTION
-===================================================== */
-
-.collection-section {
-  background: #faf8f4;
-
-  padding: 25px 76px 15px;
-}
-
-.section-heading {
-  text-align: center;
-}
-
-.section-heading h2 {
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: 31px;
-  font-weight: 500;
-
-  letter-spacing: 1.2px;
-
-  color: #15342d;
-}
-
-.collection-ornament {
-  margin: 1px auto 3px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 9px;
-
-  color: #b18c4e;
-
-  font-size: 20px;
-}
-
-.collection-ornament span {
-  width: 72px;
-  height: 1px;
-
-  background: #cbb383;
-}
-
-.section-heading p {
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: 15px;
-
-  color: #3d4542;
-}
-
-
-/* =====================================================
-   PRODUCTS
-===================================================== */
-
-.product-grid {
-  margin-top: 9px;
-
-  display: grid;
-
-  grid-template-columns: repeat(5, 1fr);
-
-  gap: 13px;
-}
-
-.product-card {
-  background: #fffdf9;
-
-  border-radius: 9px;
-
-  overflow: hidden;
-
-  border: 1px solid #e1dbd1;
-
-  box-shadow: 0 3px 12px rgba(35, 35, 30, 0.08);
-
-  transition: 0.25s ease;
-}
-
-.product-card:hover {
-  transform: translateY(-5px);
-
-  box-shadow: 0 8px 22px rgba(35, 35, 30, 0.13);
-}
-
-.product-image {
-  position: relative;
-
-  height: 206px;
-
-  overflow: hidden;
-
-  background: #e9ddca;
-}
-
-.product-image::after {
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(255,255,255,0.04),
-      rgba(255,255,255,0)
-    );
-
-  pointer-events: none;
-}
-
-.product-image img {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-  object-position: center 25%;
-
-  transition: transform 0.5s ease;
-}
-
-.product-card:hover .product-image img {
-  transform: scale(1.04);
-}
-
-.new-badge {
-  position: absolute;
-
-  z-index: 3;
-
-  top: 11px;
-  left: 10px;
-
-  padding: 8px 13px;
-
-  background: var(--green);
-
-  color: #e9d3a2;
-
-  border-radius: 3px;
-
-  font-size: 9px;
-  font-weight: 700;
-
-  letter-spacing: 1px;
-}
-
-.product-info {
-  min-height: 90px;
-
-  padding: 10px 10px 12px;
-
-  text-align: center;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.product-info h3 {
-  color: #2c3432;
-
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.product-code {
-  margin-top: 4px;
-
-  color: #444c49;
-
-  font-size: 11px;
-
-  letter-spacing: 0.5px;
-}
-
-.price {
-  margin-top: 8px;
-
-  color: #232a28;
-
-  font-size: 14px;
-  font-weight: 700;
-}
-
-
-/* =====================================================
-   BENEFITS BAR
-===================================================== */
-
-.benefits-bar {
-  min-height: 52px;
-
-  background: var(--green-dark);
-
-  color: #d3b57b;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  gap: 45px;
-
-  padding: 0 30px;
-}
-
-.benefit-item {
-  display: flex;
-  align-items: center;
-
-  gap: 13px;
-
-  font-size: 12px;
-  font-weight: 600;
-
-  letter-spacing: 0.8px;
-
-  white-space: nowrap;
-}
-
-.benefit-icon {
-  font-size: 22px;
-}
-
-.benefit-divider {
-  width: 1px;
-  height: 17px;
-
-  background: #ad8950;
-}
-
-
-/* =====================================================
-   LARGE DESKTOP
-===================================================== */
-
-@media (min-width: 1500px) {
-
-  .main-header {
-    padding-left: 80px;
-    padding-right: 80px;
-  }
-
-  .hero-content h1 {
-    font-size: 57px;
-  }
-
-  .hero-product-image {
-    width: 335px;
-  }
-
-}
-
-
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media (max-width: 1100px) {
-
-  .main-header {
-    grid-template-columns: 220px 1fr 160px;
-
-    padding: 0 30px;
-  }
-
-  .main-nav {
-    gap: 23px;
-  }
-
-  .main-nav a {
-    font-size: 15px;
-  }
-
-  .product-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .product-image {
-    height: 290px;
-  }
-
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 750px) {
-
-  .announcement-bar {
-    height: auto;
-
-    min-height: 42px;
-
-    padding: 8px 10px;
-
-    gap: 15px;
-
-    font-size: 8px;
-  }
-
-  .announcement-divider {
-    display: none;
-  }
-
-  .announcement-item {
-    gap: 5px;
-  }
-
-  .announcement-icon {
-    font-size: 11px;
-  }
-
-
-  .main-header {
-    height: auto;
-
-    grid-template-columns: 1fr auto;
-
-    padding: 17px 20px;
-  }
-
-  .logo-area {
-    width: auto;
-
-    align-items: flex-start;
-  }
-
-  .logo-symbol {
-    font-size: 50px;
-    line-height: 42px;
-  }
-
-  .brand-name {
-    font-size: 30px;
-  }
-
-  .brand-tagline {
-    font-size: 6px;
-  }
-
-  .main-nav {
-    display: none;
-  }
-
-  .header-icons {
-    gap: 7px;
-  }
-
-  .icon-button {
-    width: 31px;
-    height: 31px;
-  }
-
-
-  .hero-section {
-    grid-template-columns: 1fr;
-
-    min-height: auto;
-  }
-
-  .hero-content {
-    min-height: 370px;
-
-    padding: 45px 20px 35px;
-  }
-
-  .hero-content h1 {
-    font-size: 42px;
-  }
-
-  .hero-image-area {
-    min-height: 420px;
-  }
-
-  .hero-product-image {
-    height: 420px;
-    width: 300px;
-  }
-
-
-  .collection-section {
-    padding: 30px 16px;
-  }
-
-  .section-heading h2 {
-    font-size: 28px;
-  }
-
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 12px;
-  }
-
-  .product-image {
-    height: 250px;
-  }
-
-
-  .benefits-bar {
-    flex-wrap: wrap;
-
-    gap: 18px;
-
-    padding: 17px 10px;
-  }
-
-  .benefit-divider {
-    display: none;
-  }
-
-  .benefit-item {
-    font-size: 9px;
-  }
-
-}
+</body>
+</html>
