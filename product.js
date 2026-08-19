@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const productCode = document.getElementById("product-code");
     const productPrice = document.getElementById("product-price");
     const breadcrumbProduct = document.getElementById("breadcrumb-product");
+    const productDescription = document.getElementById("product-description");
 
     const mainImage = document.getElementById("main-product-image");
     const thumbnailsContainer = document.getElementById("product-thumbnails");
