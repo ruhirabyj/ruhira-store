@@ -110,33 +110,62 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-
     /* =========================================
        SIZE SELECTION
     ========================================= */
-
+    
     const sizeButtons =
         document.querySelectorAll(".size-button");
-
-
-    let selectedSize = "L";
-
-
+    
+    
+    let selectedSize = null;
+    
+    
     sizeButtons.forEach(button => {
-
+    
+        const size = button.textContent.trim();
+    
+        const stock = product.stock[size] || 0;
+    
+    
+        /* No stock → disable the size */
+    
+        if (stock === 0) {
+    
+            button.classList.add("unavailable");
+    
+            button.disabled = true;
+    
+            return;
+    
+        }
+    
+    
+        /* Automatically select first available size */
+    
+        if (selectedSize === null) {
+    
+            selectedSize = size;
+    
+            button.classList.add("active");
+    
+        }
+    
+    
+        /* Allow clicking available sizes */
+    
         button.addEventListener("click", () => {
-
+    
             sizeButtons.forEach(sizeButton => {
                 sizeButton.classList.remove("active");
             });
-
-
+    
             button.classList.add("active");
-
-            selectedSize = button.textContent;
-
+    
+            selectedSize = size;
+    
         });
-
+    
     });
 
 
