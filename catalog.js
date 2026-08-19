@@ -6,7 +6,7 @@ const products = {
         price: 2199,
         stock: {
             S: 0,
-            M: 1,
+            M: 0,
             L: 1,
             XL: 1,
             XXL: 1,
@@ -27,7 +27,7 @@ const products = {
         price: 2199,
         stock: {
             S: 0,
-            M: 0,
+            M: 1,
             L: 1,
             XL: 1,
             XXL: 1,
