@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
             id: "RKS105",
-            name: "Premium Kurta Set",
+            name: "Ivory Mist",
             price: 2799,
             image: "https://res.cloudinary.com/kipwuap2/image/upload/v1787125294/IMG_1577.jpg"
         }
