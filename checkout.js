@@ -312,22 +312,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 JSON.stringify(order)
             );
 
-
             /*
-               Clear shopping cart
+               Redirect customer to
+               UPI payment page
             */
-
-            localStorage.removeItem(
-                "ruhiraCart"
-            );
-
-
-            /*
-               Redirect to confirmation
-            */
-
+            
             window.location.href =
-                "order-confirmation.html";
+                "payment.html";
 
         }
     );
