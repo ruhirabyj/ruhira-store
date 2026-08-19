@@ -86,36 +86,33 @@ body {
     z-index: 10;
 }
 
-
 /* LOGO */
 
 .brand-logo {
-    width: 180px;
-    height: 100px;
+    position: absolute;
+    left: 55px;
+    top: 50%;
 
-    margin-left: 22px;
+    transform: translateY(-50%);
+
+    width: 145px;
+    height: 105px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
     text-decoration: none;
-
-    overflow: hidden;
 }
 
 .brand-logo img {
-    width: 165px;
-    max-height: 96px;
+    width: 145px;
     height: auto;
 
     display: block;
-
     object-fit: contain;
-
     filter: none;
 }
-
 
 /* NAV MENU */
 
