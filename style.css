@@ -90,24 +90,27 @@ body {
 /* LOGO */
 
 .brand-logo {
-    width: 150px;
-    margin: 0;
+    position: absolute;
+    left: calc(50% - 360px);
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 115px;
+    height: auto;
 
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
 
     text-decoration: none;
+    margin: 0;
 }
 
-
 .brand-logo img {
-    width: 125px;
+    width: 115px;
     height: auto;
-
     display: block;
     object-fit: contain;
-
     filter: none;
 }
 /* NAV MENU */
