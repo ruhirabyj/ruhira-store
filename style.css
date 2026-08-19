@@ -70,52 +70,43 @@ body {
    NAVBAR
 ========================= */
 .navbar {
-    height: 138px;
+    min-height: 100px;
     background: #fbfaf7;
 
-    display: flex;
+    display: grid;
+    grid-template-columns: 180px 1fr 180px;
+
     align-items: center;
-    justify-content: center;
 
     border-bottom: 1px solid #e7dfd0;
 
     position: relative;
     z-index: 10;
+
+    padding: 0 45px;
 }
 
 
-/* LOGO - DOES NOT AFFECT NAVIGATION LAYOUT */
+/* LOGO */
 
 .brand-logo {
-    position: absolute;
-
-    left: 50px;
-    top: 50%;
-
-    transform: translateY(-50%);
-
     width: 150px;
-    height: 120px;
+    margin: 0;
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 
     text-decoration: none;
-
-    z-index: 2;
 }
 
 
 .brand-logo img {
-    width: 145px;
+    width: 125px;
     height: auto;
 
-    max-height: 115px;
-
-    object-fit: contain;
-
     display: block;
+    object-fit: contain;
 
     filter: none;
 }
