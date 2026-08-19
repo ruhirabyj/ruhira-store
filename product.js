@@ -49,6 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     productPrice.textContent =
         "₹" + product.price.toLocaleString("en-IN");
+    
+    productDescription.textContent = product.description;
 
     breadcrumbProduct.textContent = product.name;
 
