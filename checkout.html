@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout | Ruhira</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="checkout.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <span>★ &nbsp; PREMIUM ETHNIC WEAR</span>
+            <span class="divider">|</span>
+            <span>× &nbsp; ELEGANT. TIMELESS. YOU.</span>
+            <span class="divider">|</span>
+            <span>▣ &nbsp; FREE SHIPPING PAN INDIA</span>
+        </div>
+    </div>
+
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <a href="index.html" class="brand-logo">
+            <img
+                src="https://res.cloudinary.com/kipwuap2/image/upload/v1787139152/Website_Logo.png"
+                alt="Ruhira | The Art of Everyday Elegance"
+            >
+        </a>
+
+
+        <nav class="nav-menu">
+            <a href="index.html">HOME</a>
+            <a href="index.html#collection">SHOP</a>
+            <a href="index.html#collection">COLLECTIONS</a>
+            <a href="index.html#about">ABOUT US</a>
+            <a href="index.html#contact">CONTACT</a>
+        </nav>
+
+
+        <div class="nav-icons">
+
+            <button class="icon-button" aria-label="Search">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+                </svg>
+            </button>
+
+            <button class="icon-button" aria-label="Account">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="7" r="4"></circle>
+                    <path d="M4 21c0-4.5 3.5-7 8-7s8 2.5 8 7"></path>
+                </svg>
+            </button>
+
+            <button class="icon-button cart-button" aria-label="Cart">
+                <svg viewBox="0 0 24 24">
+                    <path d="M5 7h14l-1 13H6L5 7z"></path>
+                    <path d="M9 7a3 3 0 0 1 6 0"></path>
+                </svg>
+
+                <span class="cart-count">0</span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- CHECKOUT -->
+    <main class="checkout-page">
+
+        <div class="checkout-heading">
+
+            <p>SECURE CHECKOUT</p>
+
+            <h1>Complete Your Order</h1>
+
+            <div class="checkout-ornament">
+                <span></span>
+                <b>✽</b>
+                <span></span>
+            </div>
+
+        </div>
+
+
+        <div class="checkout-layout">
+
+
+            <!-- LEFT: CUSTOMER DETAILS -->
+            <section class="checkout-form-section">
+
+                <form id="checkout-form">
+
+
+                    <!-- CONTACT -->
+                    <div class="checkout-section">
+
+                        <h2>CONTACT INFORMATION</h2>
+
+                        <div class="form-grid">
+
+                            <div class="form-group full-width">
+                                <label for="email">
+                                    EMAIL ADDRESS
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="your@email.com"
+                                    required
+                                >
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="first-name">
+                                    FIRST NAME
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="first-name"
+                                    name="first-name"
+                                    required
+                                >
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="last-name">
+                                    LAST NAME
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="last-name"
+                                    name="last-name"
+                                    required
+                                >
+                            </div>
+
+
+                            <div class="form-group full-width">
+                                <label for="phone">
+                                    MOBILE NUMBER
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    placeholder="+91"
+                                    required
+                                >
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DELIVERY ADDRESS -->
+                    <div class="checkout-section">
+
+                        <h2>DELIVERY ADDRESS</h2>
+
+                        <div class="form-grid">
+
+                            <div class="form-group full-width">
+                                <label for="address">
+                                    ADDRESS
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="address"
+                                    name="address"
+                                    placeholder="House / Flat No., Building, Street"
+                                    required
+                                >
+                            </div>
+
+
+                            <div class="form-group full-width">
+                                <label for="landmark">
+                                    LANDMARK
+                                    <span>(OPTIONAL)</span>
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="landmark"
+                                    name="landmark"
+                                >
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="city">
+                                    CITY
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="city"
+                                    name="city"
+                                    required
+                                >
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="state">
+                                    STATE
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="state"
+                                    name="state"
+                                    required
+                                >
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="pincode">
+                                    PIN CODE
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="pincode"
+                                    name="pincode"
+                                    maxlength="6"
+                                    required
+                                >
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PAYMENT -->
+                    <div class="checkout-section">
+
+                        <h2>PAYMENT METHOD</h2>
+
+                        <div class="payment-option selected">
+
+                            <input
+                                type="radio"
+                                id="online-payment"
+                                name="payment"
+                                value="online"
+                                checked
+                            >
+
+                            <label for="online-payment">
+
+                                <span class="payment-name">
+                                    ONLINE PAYMENT
+                                </span>
+
+                                <span class="payment-description">
+                                    UPI, Credit Card, Debit Card, Net Banking
+                                </span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="place-order-button"
+                    >
+                        PLACE ORDER
+                        <span>→</span>
+                    </button>
+
+
+                    <p class="secure-note">
+                        🔒 Your information is secure and encrypted.
+                    </p>
+
+                </form>
+
+            </section>
+
+
+            <!-- RIGHT: ORDER SUMMARY -->
+            <aside class="checkout-summary">
+
+                <h2>YOUR ORDER</h2>
+
+
+                <div
+                    class="checkout-items"
+                    id="checkout-items"
+                >
+                    <!-- Added by checkout.js -->
+                </div>
+
+
+                <div class="checkout-summary-line">
+                    <span>Subtotal</span>
+                    <strong id="checkout-subtotal">₹0</strong>
+                </div>
+
+
+                <div class="checkout-summary-line">
+                    <span>Shipping</span>
+                    <strong>FREE</strong>
+                </div>
+
+
+                <div class="checkout-divider"></div>
+
+
+                <div class="checkout-total">
+                    <span>TOTAL</span>
+                    <strong id="checkout-total">₹0</strong>
+                </div>
+
+
+                <a
+                    href="cart.html"
+                    class="back-to-cart"
+                >
+                    ← BACK TO BAG
+                </a>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+
+    <script src="checkout.js"></script>
+
+</body>
+
+</html>
