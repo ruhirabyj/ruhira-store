@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     productPrice.textContent =
         "₹" + product.price.toLocaleString("en-IN");
-    
+
     productDescription.textContent = product.description;
 
     breadcrumbProduct.textContent = product.name;
@@ -113,46 +113,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+
     /* =========================================
        SIZE SELECTION
     ========================================= */
-    
+
     const sizeButtons =
         document.querySelectorAll(".size-button");
-    
+
     let selectedSize = null;
-    
-    
+
+
     sizeButtons.forEach(button => {
-    
+
         const size = button.textContent.trim();
-    
+
         if (product.stock[size] === 0) {
-    
+
             button.disabled = true;
             button.classList.add("disabled");
-    
+
         }
-    
-    
+
+
         button.addEventListener("click", () => {
-    
+
             if (button.disabled) {
                 return;
             }
-    
-    
+
+
             sizeButtons.forEach(sizeButton => {
                 sizeButton.classList.remove("active");
             });
-    
-    
+
+
             button.classList.add("active");
-    
+
             selectedSize = size;
-    
+
         });
-    
+
     });
 
 
@@ -281,7 +282,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     addToCartButton.addEventListener("click", () => {
 
+        /* Require size selection */
+
+        if (!selectedSize) {
+            alert("Please select a size before adding to cart.");
+            return;
+        }
+
+
         addProductToCart();
+
 
         addToCartButton.textContent =
             "ADDED TO CART ✓";
@@ -307,6 +317,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     buyNowButton.addEventListener("click", () => {
 
+        /* Require size selection */
+
+        if (!selectedSize) {
+            alert("Please select a size before continuing.");
+            return;
+        }
+
+
         addProductToCart();
 
         window.location.href = "cart.html";
@@ -326,7 +344,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         cartButton.addEventListener("click", () => {
 
-            window.location.href = "cart.html";
+            window.location.href =
+                "cart.html";
 
         });
 
