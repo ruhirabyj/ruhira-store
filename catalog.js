@@ -4,6 +4,7 @@ const products = {
         id: "RKS101",
         name: "Pink Bloom",
         price: 2199,
+        description: "A beautiful pink kurta set designed for effortless elegance and everyday comfort.",
         stock: {
             S: 0,
             M: 0,
@@ -25,6 +26,7 @@ const products = {
         id: "RKS102",
         name: "Forest Grove",
         price: 2199,
+        description: "A beautiful pink kurta set designed for effortless elegance and everyday comfort.",
         stock: {
             S: 0,
             M: 1,
@@ -47,6 +49,7 @@ const products = {
         id: "RKS103",
         name: "Amber Glow",
         price: 2199,
+        description: "A beautiful pink kurta set designed for effortless elegance and everyday comfort.",
         stock: {
             S: 0,
             M: 1,
@@ -68,6 +71,7 @@ const products = {
         id: "RKS104",
         name: "Midnight Noir",
         price: 2299,
+        description: "A beautiful pink kurta set designed for effortless elegance and everyday comfort.",
         stock: {
             S: 0,
             M: 1,
@@ -89,6 +93,7 @@ const products = {
         id: "RKS105",
         name: "Ivory Mist",
         price: 2799,
+        description: "A beautiful pink kurta set designed for effortless elegance and everyday comfort.",
         stock: {
             S: 0,
             M: 1,
