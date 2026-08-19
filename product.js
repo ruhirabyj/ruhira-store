@@ -121,44 +121,37 @@ document.addEventListener("DOMContentLoaded", () => {
     let selectedSize = null;
     
     
+    /* Disable unavailable sizes and select
+       the first available size */
+    
     sizeButtons.forEach(button => {
     
         const size = button.textContent.trim();
     
-        const stock = product.stock[size] || 0;
-    
-    
-        /* No stock → disable the size */
-    
-        if (stock === 0) {
+        if (!product.stock[size] || product.stock[size] <= 0) {
     
             button.classList.add("unavailable");
-    
             button.disabled = true;
     
-            return;
-    
-        }
-    
-    
-        /* Automatically select first available size */
-    
-        if (selectedSize === null) {
-    
-            selectedSize = size;
+        } else if (selectedSize === null) {
     
             button.classList.add("active");
     
+            selectedSize = size;
+    
         }
     
     
-        /* Allow clicking available sizes */
-    
         button.addEventListener("click", () => {
+    
+            if (button.disabled) {
+                return;
+            }
     
             sizeButtons.forEach(sizeButton => {
                 sizeButton.classList.remove("active");
             });
+    
     
             button.classList.add("active");
     
