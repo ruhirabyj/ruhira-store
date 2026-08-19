@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UPI Payment | Ruhira</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="payment.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <span>★ &nbsp; PREMIUM ETHNIC WEAR</span>
+            <span class="divider">|</span>
+            <span>× &nbsp; ELEGANT. TIMELESS. YOU.</span>
+            <span class="divider">|</span>
+            <span>▣ &nbsp; FREE SHIPPING PAN INDIA</span>
+        </div>
+    </div>
+
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <a href="index.html" class="brand-logo">
+            <img
+                src="https://res.cloudinary.com/kipwuap2/image/upload/v1787139152/Website_Logo.png"
+                alt="Ruhira | The Art of Everyday Elegance"
+            >
+        </a>
+
+
+        <nav class="nav-menu">
+            <a href="index.html">HOME</a>
+            <a href="index.html#collection">SHOP</a>
+            <a href="index.html#about">ABOUT US</a>
+            <a href="index.html#contact">CONTACT</a>
+        </nav>
+
+
+        <div class="nav-icons">
+
+            <button class="icon-button cart-button" aria-label="Cart">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M5 7h14l-1 13H6L5 7z"></path>
+                    <path d="M9 7a3 3 0 0 1 6 0"></path>
+                </svg>
+
+                <span class="cart-count">0</span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- PAYMENT PAGE -->
+
+    <main class="payment-page">
+
+        <div class="payment-container">
+
+            <p class="payment-label">
+                COMPLETE PAYMENT
+            </p>
+
+            <h1>
+                Pay Securely via UPI
+            </h1>
+
+            <div class="payment-ornament">
+                <span></span>
+                <b>✽</b>
+                <span></span>
+            </div>
+
+
+            <!-- ORDER NUMBER -->
+
+            <p class="payment-order-number">
+                ORDER #
+                <strong id="order-number"></strong>
+            </p>
+
+
+            <!-- TOTAL -->
+
+            <div class="payment-total">
+
+                <span>AMOUNT TO PAY</span>
+
+                <strong id="payment-total">
+                    ₹0
+                </strong>
+
+            </div>
+
+
+            <!-- QR CODE -->
+
+            <div class="upi-qr-container">
+
+                <img
+                    src="upi-qr.jpg"
+                    alt="Scan to pay via UPI"
+                >
+
+            </div>
+
+
+            <p class="scan-text">
+                Scan this QR code using any UPI app
+            </p>
+
+
+            <!-- UPI ID -->
+
+            <div class="upi-id-container">
+
+                <span id="upi-id">
+                    jeya110f-1@okaxis
+                </span>
+
+                <button
+                    type="button"
+                    id="copy-upi"
+                >
+                    COPY
+                </button>
+
+            </div>
+
+
+            <p class="payment-instruction">
+
+                Please complete the payment for the exact amount shown above.
+
+            </p>
+
+
+            <!-- PAID BUTTON -->
+
+            <button
+                type="button"
+                class="paid-button"
+                id="paid-button"
+            >
+
+                I HAVE PAID
+                <span>→</span>
+
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <script src="payment.js"></script>
+
+</body>
+
+</html>
