@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your Cart | Ruhira</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cart.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <span>★ &nbsp; PREMIUM ETHNIC WEAR</span>
+            <span class="divider">|</span>
+            <span>× &nbsp; ELEGANT. TIMELESS. YOU.</span>
+            <span class="divider">|</span>
+            <span>▣ &nbsp; FREE SHIPPING PAN INDIA</span>
+        </div>
+    </div>
+
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <a href="index.html" class="brand-logo">
+            <img
+                src="https://res.cloudinary.com/kipwuap2/image/upload/v1787139152/Website_Logo.png"
+                alt="Ruhira | The Art of Everyday Elegance"
+            >
+        </a>
+
+
+        <nav class="nav-menu">
+            <a href="index.html">HOME</a>
+            <a href="index.html#collection">SHOP</a>
+            <a href="index.html#collection">COLLECTIONS</a>
+            <a href="index.html#about">ABOUT US</a>
+            <a href="index.html#contact">CONTACT</a>
+        </nav>
+
+
+        <div class="nav-icons">
+
+            <button class="icon-button" aria-label="Search">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+                </svg>
+            </button>
+
+            <button class="icon-button" aria-label="Account">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="7" r="4"></circle>
+                    <path d="M4 21c0-4.5 3.5-7 8-7s8 2.5 8 7"></path>
+                </svg>
+            </button>
+
+            <button class="icon-button cart-button" aria-label="Cart">
+                <svg viewBox="0 0 24 24">
+                    <path d="M5 7h14l-1 13H6L5 7z"></path>
+                    <path d="M9 7a3 3 0 0 1 6 0"></path>
+                </svg>
+
+                <span class="cart-count">0</span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- CART PAGE -->
+    <main class="cart-page">
+
+        <div class="cart-heading">
+
+            <p>YOUR SELECTION</p>
+
+            <h1>Shopping Bag</h1>
+
+            <div class="cart-ornament">
+                <span></span>
+                <b>✽</b>
+                <span></span>
+            </div>
+
+        </div>
+
+
+        <!-- CART CONTENT -->
+        <div class="cart-layout">
+
+            <!-- CART ITEMS -->
+            <section class="cart-items">
+
+                <div id="cart-items-container">
+
+                    <!-- Items added by cart.js -->
+
+                </div>
+
+
+                <!-- EMPTY CART -->
+                <div class="empty-cart" id="empty-cart">
+
+                    <div class="empty-cart-icon">♧</div>
+
+                    <h2>Your bag is empty</h2>
+
+                    <p>
+                        Discover our collection of elegant ethnic wear.
+                    </p>
+
+                    <a href="index.html#collection">
+                        CONTINUE SHOPPING
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- ORDER SUMMARY -->
+            <aside class="order-summary" id="order-summary">
+
+                <h2>ORDER SUMMARY</h2>
+
+                <div class="summary-line">
+                    <span>Subtotal</span>
+                    <strong id="cart-subtotal">₹0</strong>
+                </div>
+
+                <div class="summary-line shipping-line">
+                    <span>Shipping</span>
+                    <strong id="shipping-cost">FREE</strong>
+                </div>
+
+                <div class="summary-divider"></div>
+
+                <div class="summary-total">
+                    <span>Total</span>
+                    <strong id="cart-total">₹0</strong>
+                </div>
+
+                <p class="tax-note">
+                    Taxes and shipping details will be calculated at checkout.
+                </p>
+
+
+                <button
+                    type="button"
+                    class="checkout-button"
+                    id="checkout-button"
+                >
+                    PROCEED TO CHECKOUT
+                    <span>→</span>
+                </button>
+
+
+                <a
+                    href="index.html#collection"
+                    class="continue-shopping"
+                >
+                    ← CONTINUE SHOPPING
+                </a>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+
+    <script src="cart.js"></script>
+
+</body>
+
+</html>
