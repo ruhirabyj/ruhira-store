@@ -70,13 +70,12 @@ body {
    NAVBAR
 ========================= */
 .navbar {
-    min-height: 180px;
+    height: 138px;
     background: #fbfaf7;
 
-    display: grid;
-    grid-template-columns: 310px 1fr 250px;
-
+    display: flex;
     align-items: center;
+    justify-content: center;
 
     border-bottom: 1px solid #e7dfd0;
 
@@ -84,30 +83,42 @@ body {
     z-index: 10;
 }
 
-/* LOGO */
+
+/* LOGO - DOES NOT AFFECT NAVIGATION LAYOUT */
+
 .brand-logo {
-    width: 250px;
-    margin-left: 50px;
+    position: absolute;
+
+    left: 50px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 150px;
+    height: 120px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
     text-decoration: none;
+
+    z-index: 2;
 }
 
+
 .brand-logo img {
-    width: 210px;
-    height: 150px;
+    width: 145px;
+    height: auto;
+
+    max-height: 115px;
+
+    object-fit: contain;
 
     display: block;
 
-    object-fit: contain;
-    object-position: center;
-
     filter: none;
 }
-
 /* NAV MENU */
 
 .nav-menu {
@@ -161,11 +172,16 @@ body {
 /* NAV ICONS */
 
 .nav-icons {
+    position: absolute;
+
+    right: 50px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
     display: flex;
     align-items: center;
-    justify-content: center;
-
-    gap: 26px;
+    gap: 20px;
 }
 
 
