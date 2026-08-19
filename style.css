@@ -89,7 +89,7 @@ body {
 
 .brand-logo {
     position: absolute;
-    left: 140px;
+    left: 95px !important;
     top: 50%;
 
     transform: translateY(-50%);
@@ -117,7 +117,7 @@ body {
 .nav-menu {
     position: absolute;
 
-    left: 50%;
+    left: 42% !important;
     top: 50%;
 
     transform: translate(-50%, -50%);
