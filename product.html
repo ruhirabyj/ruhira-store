@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Product | Ruhira</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="product.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <span>★ &nbsp; PREMIUM ETHNIC WEAR</span>
+            <span class="divider">|</span>
+            <span>× &nbsp; ELEGANT. TIMELESS. YOU.</span>
+            <span class="divider">|</span>
+            <span>▣ &nbsp; FREE SHIPPING PAN INDIA</span>
+        </div>
+    </div>
+
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <a href="index.html" class="brand-logo">
+            <img
+                src="https://res.cloudinary.com/kipwuap2/image/upload/v1787139152/Website_Logo.png"
+                alt="Ruhira | The Art of Everyday Elegance"
+            >
+        </a>
+
+
+        <nav class="nav-menu">
+            <a href="index.html">HOME</a>
+            <a href="index.html#collection">SHOP</a>
+            <a href="index.html#collection">COLLECTIONS</a>
+            <a href="index.html#about">ABOUT US</a>
+            <a href="index.html#contact">CONTACT</a>
+        </nav>
+
+
+        <div class="nav-icons">
+
+            <button class="icon-button" aria-label="Search">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+                </svg>
+            </button>
+
+            <button class="icon-button" aria-label="Account">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="7" r="4"></circle>
+                    <path d="M4 21c0-4.5 3.5-7 8-7s8 2.5 8 7"></path>
+                </svg>
+            </button>
+
+            <button class="icon-button cart-button" aria-label="Cart">
+                <svg viewBox="0 0 24 24">
+                    <path d="M5 7h14l-1 13H6L5 7z"></path>
+                    <path d="M9 7a3 3 0 0 1 6 0"></path>
+                </svg>
+
+                <span class="cart-count">0</span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb">
+        <a href="index.html">HOME</a>
+        <span>/</span>
+        <a href="index.html#collection">COLLECTIONS</a>
+        <span>/</span>
+        <strong id="breadcrumb-product">PRODUCT</strong>
+    </div>
+
+
+    <!-- PRODUCT DETAILS -->
+    <main class="product-page">
+
+        <!-- IMAGE GALLERY -->
+        <section class="product-gallery">
+
+            <div class="product-thumbnails" id="product-thumbnails">
+                <!-- Images added by product.js -->
+            </div>
+
+
+            <div class="main-product-image">
+
+                <span class="product-new-tag">NEW</span>
+
+                <img
+                    id="main-product-image"
+                    src=""
+                    alt="Ruhira Product"
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- PRODUCT INFORMATION -->
+        <section class="product-details">
+
+            <p class="product-code" id="product-code">
+                RKS101
+            </p>
+
+            <h1 id="product-name">
+                Product Name
+            </h1>
+
+
+            <div class="product-detail-ornament">
+                <span></span>
+                <b>✽</b>
+                <span></span>
+            </div>
+
+
+            <p class="product-price" id="product-price">
+                ₹0
+            </p>
+
+
+            <p class="product-description">
+                Elegantly designed for effortless style and everyday comfort.
+                Crafted with premium fabrics and attention to every detail.
+            </p>
+
+
+            <!-- SIZE -->
+            <div class="product-option">
+
+                <div class="option-header">
+                    <span>SELECT SIZE</span>
+                    <button type="button" class="size-guide-button">
+                        SIZE GUIDE
+                    </button>
+                </div>
+
+                <div class="size-options">
+
+                    <button type="button" class="size-button">S</button>
+                    <button type="button" class="size-button">M</button>
+                    <button type="button" class="size-button active">L</button>
+                    <button type="button" class="size-button">XL</button>
+                    <button type="button" class="size-button">XXL</button>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUANTITY -->
+            <div class="product-option quantity-section">
+
+                <span>QUANTITY</span>
+
+                <div class="quantity-control">
+
+                    <button type="button" id="decrease-quantity">
+                        −
+                    </button>
+
+                    <span id="quantity">1</span>
+
+                    <button type="button" id="increase-quantity">
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACTION BUTTONS -->
+            <div class="product-actions">
+
+                <button type="button" class="add-to-cart-button" id="add-to-cart">
+                    ADD TO CART
+                </button>
+
+                <button type="button" class="buy-now-button" id="buy-now">
+                    BUY NOW
+                </button>
+
+            </div>
+
+
+            <!-- PRODUCT BENEFITS -->
+            <div class="product-benefits">
+
+                <div>
+                    <span>✦</span>
+                    <p>Premium Quality</p>
+                </div>
+
+                <div>
+                    <span>↻</span>
+                    <p>Easy Returns</p>
+                </div>
+
+                <div>
+                    <span>▣</span>
+                    <p>Secure Payments</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- DETAILS -->
+    <section class="product-extra-details">
+
+        <details open>
+            <summary>PRODUCT DETAILS</summary>
+
+            <div class="details-content">
+                <p>
+                    Designed with elegance and comfort in mind.
+                    Please refer to the product images for colour,
+                    fabric and design details.
+                </p>
+            </div>
+        </details>
+
+
+        <details>
+            <summary>SHIPPING & RETURNS</summary>
+
+            <div class="details-content">
+                <p>
+                    Shipping and return information will be added here.
+                </p>
+            </div>
+        </details>
+
+
+        <details>
+            <summary>CARE INSTRUCTIONS</summary>
+
+            <div class="details-content">
+                <p>
+                    Please follow the care instructions provided with
+                    the garment to maintain its quality and colour.
+                </p>
+            </div>
+        </details>
+
+    </section>
+
+
+    <script src="script.js"></script>
+    <script src="product.js"></script>
+
+</body>
+
+</html>
