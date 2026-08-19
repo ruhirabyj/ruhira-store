@@ -70,56 +70,68 @@ body {
    NAVBAR
 ========================= */
 .navbar {
-    height: 92px;
+    height: 170px;
     background: #fbfaf7;
 
-    display: flex;
-    align-items: center;
-
-    padding: 0 50px;
-    gap: 38px;
-
-    border-bottom: 1px solid #e7dfd0;
-
     position: relative;
-    z-index: 10;
-}
-
-
-/* LOGO */
-
-.brand-logo {
-    width: 75px;
-    margin: 0;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    flex-shrink: 0;
+    border-bottom: 1px solid #e7dfd0;
+
+    z-index: 10;
+}
+
+
+/* LOGO — completely independent from navigation */
+
+.brand-logo {
+    position: absolute;
+
+    left: 70px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 250px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     text-decoration: none;
 }
 
 
 .brand-logo img {
-    width: 70px;
+    width: 210px;
     height: auto;
 
     display: block;
     object-fit: contain;
+
     filter: none;
 }
 
 
-/* NAVIGATION */
+/* NAVIGATION — always centered */
 
 .nav-menu {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
     display: flex;
     align-items: center;
-    gap: 38px;
 
-    flex: 1;
+    gap: 45px;
+
+    white-space: nowrap;
 }
 
 .nav-menu a {
@@ -161,19 +173,20 @@ body {
 }
 
 
-/* NAV ICONS */
+/* ICONS — independent on right */
 
 .nav-icons {
     position: absolute;
 
-    right: 50px;
+    right: 70px;
     top: 50%;
 
     transform: translateY(-50%);
 
     display: flex;
     align-items: center;
-    gap: 20px;
+
+    gap: 24px;
 }
 
 
