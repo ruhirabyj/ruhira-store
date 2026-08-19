@@ -70,53 +70,57 @@ body {
    NAVBAR
 ========================= */
 .navbar {
-    min-height: 100px;
+    height: 92px;
     background: #fbfaf7;
 
-    display: grid;
-    grid-template-columns: 150px auto 1fr;
-
+    display: flex;
     align-items: center;
+
+    padding: 0 50px;
+    gap: 38px;
 
     border-bottom: 1px solid #e7dfd0;
 
     position: relative;
     z-index: 10;
-
-    padding: 0 50px;
 }
 
 
 /* LOGO */
 
 .brand-logo {
-    width: 130px;
+    width: 75px;
     margin: 0;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
+    flex-shrink: 0;
+
     text-decoration: none;
 }
 
+
 .brand-logo img {
-    width: 115px;
+    width: 70px;
     height: auto;
+
     display: block;
     object-fit: contain;
     filter: none;
 }
-/* NAV MENU */
+
+
+/* NAVIGATION */
 
 .nav-menu {
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 38px;
 
-    gap: 42px;
+    flex: 1;
 }
-
 
 .nav-menu a {
     position: relative;
