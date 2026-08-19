@@ -3,36 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruhira | The Art of Ethnic Elegance</title>
+
+    <title>Ruhira | The Art of Everyday Elegance</title>
 
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
     <!-- TOP ANNOUNCEMENT BAR -->
-    <div class="announcement-bar">
-        <div class="announcement-item">
+    <div class="top-bar">
+        <div class="top-item">
             <span>★</span>
-            <span>PREMIUM ETHNIC WEAR</span>
+            PREMIUM ETHNIC WEAR
         </div>
 
-        <div class="announcement-divider"></div>
+        <div class="top-divider"></div>
 
-        <div class="announcement-item">
+        <div class="top-item">
             <span>×</span>
-            <span>ELEGANT. TIMELESS. YOU.</span>
+            ELEGANT. TIMELESS. YOU.
         </div>
 
-        <div class="announcement-divider"></div>
+        <div class="top-divider"></div>
 
-        <div class="announcement-item">
-            <span class="truck">▣</span>
-            <span>FREE SHIPPING PAN INDIA</span>
+        <div class="top-item">
+            <span>▣</span>
+            FREE SHIPPING PAN INDIA
         </div>
     </div>
 
@@ -41,66 +43,49 @@
     <header class="main-header">
 
         <!-- LOGO -->
-        <div class="brand">
-
-            <div class="brand-symbol">
-                R
-            </div>
-
-            <div class="brand-name">RUHIRA</div>
-
-            <div class="brand-tagline">
-                <span></span>
-                <small>THE ART OF ETHNIC ELEGANCE</small>
-                <span></span>
-            </div>
-
-        </div>
+        <a href="#" class="logo">
+            <img
+                src="https://res.cloudinary.com/kipwuap2/image/upload/v1787138182/Watermark.png"
+                alt="Ruhira"
+            >
+        </a>
 
 
         <!-- NAVIGATION -->
-        <nav class="navigation">
-
+        <nav class="nav-menu">
             <a href="#" class="active">HOME</a>
 
-            <a href="#">
-                SHOP
-                <span class="down-arrow">⌄</span>
-            </a>
+            <div class="nav-dropdown">
+                <a href="#">SHOP <span class="arrow">⌄</span></a>
 
-            <a href="#collection">COLLECTIONS</a>
+                <div class="dropdown-menu">
+                    <a href="#rks101">RKS101</a>
+                    <a href="#rks102">RKS102</a>
+                    <a href="#rks103">RKS103</a>
+                    <a href="#rks104">RKS104</a>
+                    <a href="#rks105">RKS105</a>
+                </div>
+            </div>
 
-            <a href="#">ABOUT US</a>
-
-            <a href="#">CONTACT</a>
-
+            <a href="#collections">COLLECTIONS</a>
+            <a href="#about">ABOUT US</a>
+            <a href="#contact">CONTACT</a>
         </nav>
 
 
         <!-- HEADER ICONS -->
         <div class="header-icons">
 
-            <button class="icon-button" aria-label="Search">
-                <svg viewBox="0 0 24 24">
-                    <circle cx="10.8" cy="10.8" r="6.8"></circle>
-                    <line x1="16" y1="16" x2="21" y2="21"></line>
-                </svg>
+            <button class="icon-btn search-btn" aria-label="Search">
+                <span></span>
             </button>
 
-            <button class="icon-button" aria-label="Account">
-                <svg viewBox="0 0 24 24">
-                    <circle cx="12" cy="7" r="4"></circle>
-                    <path d="M4 21c.8-5 3.4-7 8-7s7.2 2 8 7"></path>
-                </svg>
+            <button class="icon-btn user-btn" aria-label="Account">
+                ♙
             </button>
 
-            <button class="icon-button cart-button" aria-label="Cart">
-                <svg viewBox="0 0 24 24">
-                    <path d="M3 5h3l1.5 13h10L20 8H7"></path>
-                    <circle cx="10" cy="21" r="1"></circle>
-                    <circle cx="17" cy="21" r="1"></circle>
-                </svg>
-
+            <button class="icon-btn bag-btn" aria-label="Shopping Bag">
+                <span class="bag-icon">♧</span>
                 <span class="cart-count">0</span>
             </button>
 
@@ -115,43 +100,45 @@
         <div class="hero-decoration left-decoration"></div>
         <div class="hero-decoration right-decoration"></div>
 
-
-        <!-- LEFT CONTENT -->
         <div class="hero-content">
 
-            <h1>
-                <span>ETHNIC WEAR</span>
-                <span>THAT SPEAKS ELEGANCE</span>
-            </h1>
+            <div class="hero-text">
 
-            <div class="ornament">
-                <span></span>
-                <b>✽</b>
-                <span></span>
+                <h1>
+                    ETHNIC WEAR<br>
+                    THAT SPEAKS ELEGANCE
+                </h1>
+
+                <div class="hero-ornament">
+                    <span></span>
+                    <b>✽</b>
+                    <span></span>
+                </div>
+
+                <p>
+                    Premium fabrics. Timeless designs.<br>
+                    Made for every you.
+                </p>
+
+                <a href="#collections" class="shop-now">
+                    SHOP NOW
+                    <span>→</span>
+                </a>
+
             </div>
 
-            <p>
-                Premium fabrics. Timeless designs.<br>
-                Made for every you.
-            </p>
 
-            <a href="#collection" class="shop-now">
-                <span>SHOP NOW</span>
-                <strong>→</strong>
-            </a>
+            <!-- HERO IMAGE -->
+            <div class="hero-image-wrap">
 
-        </div>
+                <div class="hero-arch">
 
+                    <img
+                        src="https://res.cloudinary.com/kipwuap2/image/upload/v1787125875/IMG_1424.jpg"
+                        alt="Ruhira Premium Collection"
+                    >
 
-        <!-- RIGHT HERO IMAGE -->
-        <div class="hero-image-area">
-
-            <div class="hero-arch">
-
-                <img
-                    src="https://res.cloudinary.com/kipwuap2/image/upload/v1787125875/IMG_1424.jpg"
-                    alt="Ruhira Premium Ethnic Wear"
-                >
+                </div>
 
             </div>
 
@@ -160,8 +147,8 @@
     </section>
 
 
-    <!-- PREMIUM COLLECTION -->
-    <section class="collection" id="collection">
+    <!-- COLLECTION -->
+    <section class="collection-section" id="collections">
 
         <div class="collection-heading">
 
@@ -182,7 +169,7 @@
 
 
             <!-- RKS101 -->
-            <article class="product-card">
+            <article class="product-card" id="rks101">
 
                 <div class="product-image">
 
@@ -190,22 +177,22 @@
 
                     <img
                         src="https://res.cloudinary.com/kipwuap2/image/upload/v1787125875/IMG_1424.jpg"
-                        alt="Pink Bloom"
+                        alt="RKS101"
                     >
 
                 </div>
 
                 <div class="product-info">
                     <h3>Pink Bloom</h3>
-                    <p>RKS101</p>
-                    <strong>₹2,199</strong>
+                    <p class="product-code">RKS101</p>
+                    <p class="price">₹2,199</p>
                 </div>
 
             </article>
 
 
             <!-- RKS102 -->
-            <article class="product-card">
+            <article class="product-card" id="rks102">
 
                 <div class="product-image">
 
@@ -213,22 +200,22 @@
 
                     <img
                         src="https://res.cloudinary.com/kipwuap2/image/upload/v1787125243/IMG_1749.jpg"
-                        alt="Forest Grove"
+                        alt="RKS102"
                     >
 
                 </div>
 
                 <div class="product-info">
                     <h3>Forest Grove</h3>
-                    <p>RKS102</p>
-                    <strong>₹2,199</strong>
+                    <p class="product-code">RKS102</p>
+                    <p class="price">₹2,199</p>
                 </div>
 
             </article>
 
 
             <!-- RKS103 -->
-            <article class="product-card">
+            <article class="product-card" id="rks103">
 
                 <div class="product-image">
 
@@ -236,22 +223,22 @@
 
                     <img
                         src="https://res.cloudinary.com/kipwuap2/image/upload/v1787125256/IMG_1794.jpg"
-                        alt="Amber Glow"
+                        alt="RKS103"
                     >
 
                 </div>
 
                 <div class="product-info">
                     <h3>Amber Glow</h3>
-                    <p>RKS103</p>
-                    <strong>₹2,199</strong>
+                    <p class="product-code">RKS103</p>
+                    <p class="price">₹2,199</p>
                 </div>
 
             </article>
 
 
             <!-- RKS104 -->
-            <article class="product-card">
+            <article class="product-card" id="rks104">
 
                 <div class="product-image">
 
@@ -259,22 +246,22 @@
 
                     <img
                         src="https://res.cloudinary.com/kipwuap2/image/upload/v1787125275/IMG_1636.jpg"
-                        alt="Midnight Noir"
+                        alt="RKS104"
                     >
 
                 </div>
 
                 <div class="product-info">
                     <h3>Midnight Noir</h3>
-                    <p>RKS104</p>
-                    <strong>₹2,299</strong>
+                    <p class="product-code">RKS104</p>
+                    <p class="price">₹2,299</p>
                 </div>
 
             </article>
 
 
             <!-- RKS105 -->
-            <article class="product-card">
+            <article class="product-card" id="rks105">
 
                 <div class="product-image">
 
@@ -282,19 +269,18 @@
 
                     <img
                         src="https://res.cloudinary.com/kipwuap2/image/upload/v1787125294/IMG_1577.jpg"
-                        alt="Premium Kurta Set"
+                        alt="RKS105"
                     >
 
                 </div>
 
                 <div class="product-info">
                     <h3>Premium Kurta Set</h3>
-                    <p>RKS105</p>
-                    <strong>₹2,799</strong>
+                    <p class="product-code">RKS105</p>
+                    <p class="price">₹2,799</p>
                 </div>
 
             </article>
-
 
         </div>
 
@@ -302,10 +288,10 @@
 
 
     <!-- BOTTOM FEATURES -->
-    <section class="features">
+    <section class="features-bar">
 
         <div class="feature">
-            <span class="feature-icon">♧</span>
+            <span class="feature-icon">✿</span>
             <span>PREMIUM QUALITY</span>
         </div>
 
@@ -326,11 +312,20 @@
         <div class="feature-divider"></div>
 
         <div class="feature">
-            <span class="feature-icon">♧</span>
+            <span class="feature-icon">◉</span>
             <span>CUSTOMER SUPPORT</span>
         </div>
 
     </section>
+
+
+    <script>
+
+        document.querySelector(".search-btn").addEventListener("click", function () {
+            alert("Search functionality will be added here.");
+        });
+
+    </script>
 
 </body>
 </html>
