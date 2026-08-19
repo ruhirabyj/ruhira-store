@@ -847,3 +847,9 @@ body {
     }
 
 }
+
+.size-button.disabled,
+.size-button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
