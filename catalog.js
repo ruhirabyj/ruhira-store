@@ -19,12 +19,12 @@ const products = {
         name: "Forest Grove",
         price: 2199,
         images: [
-            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125243/IMG_1749.jpg",
+            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125243/IMG_1710.jpg",
             "https://res.cloudinary.com/kipwuap2/image/upload/v1787125243/IMG_1755.jpg",
             "https://res.cloudinary.com/kipwuap2/image/upload/v1787125243/IMG_1704.jpg",
             "https://res.cloudinary.com/kipwuap2/image/upload/v1787125243/IMG_1707.jpg",
             "https://res.cloudinary.com/kipwuap2/image/upload/v1787125243/IMG_1713.jpg",
-            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125243/IMG_1710.jpg"
+            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125243/IMG_1749.jpg"
         ]
     },
 
@@ -34,11 +34,11 @@ const products = {
         price: 2199,
 
         images: [
-            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125256/IMG_1794.jpg",
+            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125256/IMG_1788.jpg",
             "https://res.cloudinary.com/kipwuap2/image/upload/v1787125256/IMG_1791.jpg",
             "https://res.cloudinary.com/kipwuap2/image/upload/v1787125256/IMG_1792.jpg",
             "https://res.cloudinary.com/kipwuap2/image/upload/v1787125256/IMG_1790.jpg",
-            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125256/IMG_1788.jpg"
+            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125256/IMG_1794.jpg"
         ]
     },
 
