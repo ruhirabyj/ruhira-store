@@ -89,7 +89,7 @@ body {
 
 .brand-logo {
     position: absolute;
-    left: 95px !important;
+    left: 30px;
     top: 50%;
 
     transform: translateY(-50%);
