@@ -89,13 +89,12 @@ body {
 
 .brand-logo {
     position: absolute;
-
-    left: 120px;   /* moves logo to the right */
+    left: 140px;
     top: 50%;
 
     transform: translateY(-50%);
 
-    width: 180px;  /* shorter logo area */
+    width: 150px;
 
     display: flex;
     align-items: center;
@@ -105,15 +104,13 @@ body {
 }
 
 .brand-logo img {
-    width: 210px;
+    width: 150px;
     height: auto;
 
     display: block;
     object-fit: contain;
-
     filter: none;
 }
-
 
 /* NAVIGATION — always centered */
 
