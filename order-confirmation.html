@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Order Confirmed | Ruhira</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="order-confirmation.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <span>★ &nbsp; PREMIUM ETHNIC WEAR</span>
+            <span class="divider">|</span>
+            <span>× &nbsp; ELEGANT. TIMELESS. YOU.</span>
+            <span class="divider">|</span>
+            <span>▣ &nbsp; FREE SHIPPING PAN INDIA</span>
+        </div>
+    </div>
+
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <a href="index.html" class="brand-logo">
+            <img
+                src="https://res.cloudinary.com/kipwuap2/image/upload/v1787139152/Website_Logo.png"
+                alt="Ruhira | The Art of Everyday Elegance"
+            >
+        </a>
+
+
+        <nav class="nav-menu">
+            <a href="index.html">HOME</a>
+            <a href="index.html#collection">SHOP</a>
+            <a href="index.html#collection">COLLECTIONS</a>
+            <a href="index.html#about">ABOUT US</a>
+            <a href="index.html#contact">CONTACT</a>
+        </nav>
+
+
+        <div class="nav-icons">
+
+            <button class="icon-button" aria-label="Search">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+                </svg>
+            </button>
+
+            <button class="icon-button" aria-label="Account">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="7" r="4"></circle>
+                    <path d="M4 21c0-4.5 3.5-7 8-7s8 2.5 8 7"></path>
+                </svg>
+
+            </button>
+
+            <button class="icon-button cart-button" aria-label="Cart">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M5 7h14l-1 13H6L5 7z"></path>
+                    <path d="M9 7a3 3 0 0 1 6 0"></path>
+                </svg>
+
+                <span class="cart-count">0</span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ORDER CONFIRMATION -->
+    <main class="confirmation-page">
+
+        <section class="confirmation-hero">
+
+            <div class="confirmation-icon">
+                ✓
+            </div>
+
+            <p class="confirmation-small-title">
+                ORDER CONFIRMED
+            </p>
+
+            <h1>
+                Thank You for Choosing Ruhira
+            </h1>
+
+            <div class="confirmation-ornament">
+                <span></span>
+                <b>✽</b>
+                <span></span>
+            </div>
+
+            <p class="confirmation-message">
+                Your order has been received and we are delighted
+                to prepare something beautiful for you.
+            </p>
+
+        </section>
+
+
+        <!-- ORDER DETAILS -->
+        <section class="confirmation-content">
+
+            <div class="confirmation-order-card">
+
+                <div class="order-card-header">
+
+                    <div>
+                        <p>ORDER NUMBER</p>
+                        <h2 id="order-number">
+                            RUH00000000
+                        </h2>
+                    </div>
+
+                    <div>
+                        <p>ORDER TOTAL</p>
+                        <h2 id="order-total">
+                            ₹0
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <div class="confirmation-divider"></div>
+
+
+                <!-- ORDER ITEMS -->
+                <div class="confirmation-section">
+
+                    <h3>YOUR ORDER</h3>
+
+                    <div
+                        id="confirmation-items"
+                        class="confirmation-items"
+                    >
+                        <!-- Added by order-confirmation.js -->
+                    </div>
+
+                </div>
+
+
+                <div class="confirmation-divider"></div>
+
+
+                <!-- DELIVERY ADDRESS -->
+                <div class="confirmation-section">
+
+                    <h3>DELIVERING TO</h3>
+
+                    <div
+                        id="delivery-address"
+                        class="delivery-address"
+                    >
+                        <!-- Added by order-confirmation.js -->
+                    </div>
+
+                </div>
+
+
+                <div class="confirmation-divider"></div>
+
+
+                <!-- ORDER INFORMATION -->
+                <div class="confirmation-section order-info-section">
+
+                    <div class="order-info">
+
+                        <div>
+                            <span>ORDER DATE</span>
+
+                            <strong id="order-date">
+                                -
+                            </strong>
+                        </div>
+
+
+                        <div>
+                            <span>PAYMENT</span>
+
+                            <strong>
+                                Online Payment
+                            </strong>
+                        </div>
+
+
+                        <div>
+                            <span>SHIPPING</span>
+
+                            <strong>
+                                Free Shipping
+                            </strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- NEXT STEPS -->
+            <div class="confirmation-next">
+
+                <h2>What happens next?</h2>
+
+                <div class="next-steps">
+
+                    <div class="next-step">
+
+                        <span class="step-number">01</span>
+
+                        <div>
+                            <h3>Order Received</h3>
+                            <p>
+                                We have received your order successfully.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="next-step">
+
+                        <span class="step-number">02</span>
+
+                        <div>
+                            <h3>Order Preparation</h3>
+                            <p>
+                                Your Ruhira selection will be carefully prepared.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="next-step">
+
+                        <span class="step-number">03</span>
+
+                        <div>
+                            <h3>On Its Way</h3>
+                            <p>
+                                You will receive updates once your order is shipped.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="index.html#collection"
+                    class="continue-shopping-button"
+                >
+                    CONTINUE SHOPPING
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="order-confirmation.js"></script>
+
+</body>
+
+</html>
