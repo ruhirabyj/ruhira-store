@@ -4,539 +4,423 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Ruhira | The Art of Everyday Elegance</title>
+  <title>Ruhira | The Art of Ethnic Elegance</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    :root {
-      --bg: #111817;
-      --bg-light: #182321;
-      --gold: #c6a15b;
-      --gold-light: #e0c27d;
-      --cream: #f4efe6;
-      --text-muted: #b8b8b2;
-    }
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--cream);
-    }
-
-    /* HEADER */
-
-    header {
-      height: 100px;
-      width: 100%;
-      background: #111817;
-      border-bottom: 1px solid rgba(198, 161, 91, 0.18);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 7%;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .logo {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      color: var(--cream);
-      min-width: 130px;
-    }
-
-    .logo-mark {
-      color: var(--gold);
-      font-family: Georgia, serif;
-      font-size: 42px;
-      line-height: 32px;
-      font-weight: bold;
-    }
-
-    .logo-name {
-      font-family: Georgia, serif;
-      letter-spacing: 3px;
-      font-size: 18px;
-      margin-top: 8px;
-    }
-
-    .logo-tagline {
-      font-size: 5px;
-      letter-spacing: 1.2px;
-      color: var(--gold);
-      margin-top: 4px;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 45px;
-    }
-
-    nav a {
-      color: var(--cream);
-      text-decoration: none;
-      font-size: 15px;
-      letter-spacing: 0.5px;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: var(--gold);
-    }
-
-    .cart {
-      border: 1px solid rgba(198, 161, 91, 0.5);
-      width: 42px;
-      height: 42px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--gold);
-      cursor: pointer;
-      font-size: 20px;
-    }
-
-    /* HERO */
-
-    .hero {
-      min-height: calc(100vh - 100px);
-      display: grid;
-      grid-template-columns: 45% 55%;
-      background:
-        radial-gradient(circle at 15% 50%, #23312d 0%, transparent 35%),
-        var(--bg);
-      overflow: hidden;
-    }
-
-    .hero-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 8% 15%;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-content::before {
-      content: "";
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      border-radius: 50%;
-      background: #080d0c;
-      right: -280px;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: -1;
-    }
-
-    .eyebrow {
-      color: var(--gold);
-      letter-spacing: 3px;
-      font-size: 11px;
-      margin-bottom: 25px;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(55px, 7vw, 110px);
-      font-weight: 400;
-      line-height: 0.9;
-      letter-spacing: -3px;
-      margin-bottom: 35px;
-    }
-
-    .hero-description {
-      color: #c7c7c2;
-      font-size: 18px;
-      line-height: 1.6;
-      max-width: 420px;
-      margin-bottom: 40px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: fit-content;
-      background: var(--gold);
-      color: #17201e;
-      text-decoration: none;
-      padding: 17px 38px;
-      font-size: 13px;
-      letter-spacing: 1.5px;
-      font-weight: bold;
-      text-transform: uppercase;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: var(--gold-light);
-      transform: translateY(-2px);
-    }
-
-    .hero-image {
-      position: relative;
-      min-height: 650px;
-      overflow: hidden;
-      background:
-        linear-gradient(
-          90deg,
-          rgba(17, 24, 23, 0.9),
-          rgba(17, 24, 23, 0.05)
-        ),
-        url("https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1400&q=85");
-      background-size: cover;
-      background-position: center;
-    }
-
-    .hero-image::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.1),
-        rgba(17,24,23,0.35)
-      );
-    }
-
-    /* COLLECTION */
-
-    .collection {
-      padding: 100px 8%;
-      background: #f3efe7;
-      color: #18201e;
-    }
-
-    .section-label {
-      color: #9a7840;
-      letter-spacing: 3px;
-      font-size: 11px;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
-    .collection h2 {
-      font-family: Georgia, serif;
-      font-size: clamp(40px, 5vw, 70px);
-      font-weight: 400;
-      margin-bottom: 60px;
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-    }
-
-    .product {
-      background: white;
-      transition: 0.3s;
-    }
-
-    .product:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-    }
-
-    .product-image {
-      width: 100%;
-      aspect-ratio: 0.8;
-      object-fit: cover;
-      display: block;
-    }
-
-    .product-info {
-      padding: 22px;
-    }
-
-    .product-info h3 {
-      font-family: Georgia, serif;
-      font-size: 22px;
-      font-weight: 400;
-      margin-bottom: 10px;
-    }
-
-    .product-info p {
-      color: #7b7b75;
-      margin-bottom: 18px;
-    }
-
-    .price {
-      font-weight: bold;
-      color: #9a7840;
-    }
-
-    /* ABOUT */
-
-    .about {
-      background: #16211f;
-      padding: 110px 12%;
-      text-align: center;
-    }
-
-    .about h2 {
-      font-family: Georgia, serif;
-      font-size: clamp(42px, 5vw, 72px);
-      font-weight: 400;
-      margin-bottom: 30px;
-    }
-
-    .about p {
-      max-width: 700px;
-      margin: auto;
-      color: var(--text-muted);
-      font-size: 18px;
-      line-height: 1.8;
-    }
-
-    /* FOOTER */
-
-    footer {
-      background: #0c1110;
-      padding: 50px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: #888;
-      font-size: 13px;
-    }
-
-    footer .footer-brand {
-      color: var(--gold);
-      font-family: Georgia, serif;
-      letter-spacing: 3px;
-      font-size: 20px;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 800px) {
-      header {
-        padding: 0 5%;
-        height: 80px;
-      }
-
-      nav {
-        gap: 20px;
-      }
-
-      nav a {
-        font-size: 13px;
-      }
-
-      .logo-mark {
-        font-size: 32px;
-      }
-
-      .logo-name {
-        font-size: 14px;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-content {
-        min-height: 600px;
-        padding: 80px 10%;
-      }
-
-      .hero-image {
-        min-height: 550px;
-      }
-
-      .products {
-        grid-template-columns: 1fr;
-      }
-
-      footer {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div class="announcement-bar">
+
+    <div class="announcement-item">
+      <span>★</span>
+      PREMIUM ETHNIC WEAR
+    </div>
+
+    <div class="announcement-divider"></div>
+
+    <div class="announcement-item">
+      <span>×</span>
+      ELEGANT. TIMELESS. YOU.
+    </div>
+
+    <div class="announcement-divider"></div>
+
+    <div class="announcement-item">
+      <span>▣</span>
+      FREE SHIPPING PAN INDIA
+    </div>
+
+  </div>
+
+
   <!-- HEADER -->
+  <header class="site-header">
 
-  <header>
+    <div class="logo-area">
+      <img id="logoImage" src="" alt="Ruhira">
+    </div>
 
-    <a href="#" class="logo">
-      <div class="logo-mark">R</div>
-      <div class="logo-name">RUHIRA</div>
-      <div class="logo-tagline">THE ART OF EVERYDAY ELEGANCE</div>
-    </a>
+    <nav class="main-navigation">
 
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#shop">Shop</a>
-      <a href="#about">Our Story</a>
+      <a href="#home" class="active">HOME</a>
 
-      <div class="cart" title="Shopping Cart">
-        ♡
-      </div>
+      <a href="#shop">
+        SHOP
+        <span class="down-arrow">⌄</span>
+      </a>
+
+      <a href="#collections">COLLECTIONS</a>
+
+      <a href="#about">ABOUT US</a>
+
+      <a href="#contact">CONTACT</a>
+
     </nav>
+
+
+    <div class="header-icons">
+
+      <button class="icon-button search-button" aria-label="Search"></button>
+
+      <button class="icon-button account-button" aria-label="Account"></button>
+
+      <button class="icon-button cart-button" aria-label="Shopping Cart">
+        <span class="cart-number">0</span>
+      </button>
+
+    </div>
 
   </header>
 
 
   <!-- HERO -->
-
   <main>
 
-    <section class="hero" id="home">
+    <section class="hero-section" id="home">
+
+      <div class="botanical botanical-left">❧</div>
 
       <div class="hero-content">
 
-        <div class="eyebrow">
-          The New Collection
-        </div>
-
         <h1>
-          RUHIRA<br>
-          ETHNIC
+          ETHNIC WEAR<br>
+          THAT SPEAKS ELEGANCE
         </h1>
 
-        <p class="hero-description">
-          Timeless elegance, thoughtfully crafted.
-          Discover ethnic fashion designed to celebrate
-          every moment and every woman.
+        <div class="gold-ornament">
+          <span></span>
+          ✽
+          <span></span>
+        </div>
+
+        <p>
+          Premium fabrics. Timeless designs.<br>
+          Made for every you.
         </p>
 
-        <a href="#shop" class="btn">
-          Shop Now
+        <a href="#shop" class="shop-button">
+          <span>SHOP NOW</span>
+          <strong>⟶</strong>
         </a>
 
       </div>
 
-      <div class="hero-image"></div>
+
+      <div class="hero-image-wrapper">
+
+        <div class="hero-arch"></div>
+
+        <img
+          id="heroImage"
+          src=""
+          alt="Ruhira Premium Ethnic Wear"
+        >
+
+      </div>
+
+      <div class="botanical botanical-right">❧</div>
 
     </section>
 
 
-    <!-- COLLECTION -->
+    <!-- PREMIUM COLLECTION -->
 
-    <section class="collection" id="shop">
+    <section class="premium-section" id="collections">
 
-      <div class="section-label">
-        Curated for You
-      </div>
+      <h2>PREMIUM COLLECTION</h2>
 
-      <h2>
-        Discover the Collection
-      </h2>
+      <div class="collection-ornament">
 
-      <div class="products">
-
-        <article class="product">
-
-          <img
-            class="product-image"
-            src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=800&q=85"
-            alt="Elegant ethnic wear">
-
-          <div class="product-info">
-            <h3>Signature Kurti</h3>
-            <p>Elegant. Comfortable. Timeless.</p>
-            <div class="price">₹1,499</div>
-          </div>
-
-        </article>
-
-
-        <article class="product">
-
-          <img
-            class="product-image"
-            src="https://images.unsplash.com/photo-1610652492500-ded49ceeb378?auto=format&fit=crop&w=800&q=85"
-            alt="Premium ethnic collection">
-
-          <div class="product-info">
-            <h3>Festive Edit</h3>
-            <p>Designed for your special moments.</p>
-            <div class="price">₹2,499</div>
-          </div>
-
-        </article>
-
-
-        <article class="product">
-
-          <img
-            class="product-image"
-            src="https://images.unsplash.com/photo-1585488434455-31a6d6a4762b?auto=format&fit=crop&w=800&q=85"
-            alt="Classic ethnic fashion">
-
-          <div class="product-info">
-            <h3>Classic Collection</h3>
-            <p>Grace that never goes out of style.</p>
-            <div class="price">₹1,999</div>
-          </div>
-
-        </article>
+        <span></span>
+        ✽
+        <span></span>
 
       </div>
 
-    </section>
-
-
-    <!-- ABOUT -->
-
-    <section class="about" id="about">
-
-      <div class="section-label">
-        About Ruhira
-      </div>
-
-      <h2>
-        The Art of Everyday Elegance
-      </h2>
-
-      <p>
-        Ruhira brings together timeless ethnic fashion,
-        effortless elegance and thoughtfully chosen designs.
-        Every piece is selected to make everyday dressing
-        feel a little more special.
+      <p class="collection-description">
+        Curated designs for the modern woman
       </p>
+
+
+      <div class="product-grid" id="shop">
+
+
+        <!-- PRODUCT 1 -->
+
+        <article class="product-card">
+
+          <div class="product-photo">
+
+            <span class="new-label">NEW</span>
+
+            <img id="product1" src="" alt="Pink Bloom">
+
+          </div>
+
+          <div class="product-details">
+
+            <h3>Pink Bloom</h3>
+
+            <p>RKS101</p>
+
+            <strong>₹2,199</strong>
+
+          </div>
+
+        </article>
+
+
+        <!-- PRODUCT 2 -->
+
+        <article class="product-card">
+
+          <div class="product-photo">
+
+            <span class="new-label">NEW</span>
+
+            <img id="product2" src="" alt="Forest Grove">
+
+          </div>
+
+          <div class="product-details">
+
+            <h3>Forest Grove</h3>
+
+            <p>RKS102</p>
+
+            <strong>₹2,199</strong>
+
+          </div>
+
+        </article>
+
+
+        <!-- PRODUCT 3 -->
+
+        <article class="product-card">
+
+          <div class="product-photo">
+
+            <span class="new-label">NEW</span>
+
+            <img id="product3" src="" alt="Amber Glow">
+
+          </div>
+
+          <div class="product-details">
+
+            <h3>Amber Glow</h3>
+
+            <p>RKS103</p>
+
+            <strong>₹2,199</strong>
+
+          </div>
+
+        </article>
+
+
+        <!-- PRODUCT 4 -->
+
+        <article class="product-card">
+
+          <div class="product-photo">
+
+            <span class="new-label">NEW</span>
+
+            <img id="product4" src="" alt="Midnight Noir">
+
+          </div>
+
+          <div class="product-details">
+
+            <h3>Midnight Noir</h3>
+
+            <p>RKS104</p>
+
+            <strong>₹2,299</strong>
+
+          </div>
+
+        </article>
+
+
+        <!-- PRODUCT 5 -->
+
+        <article class="product-card">
+
+          <div class="product-photo">
+
+            <span class="new-label">NEW</span>
+
+            <img id="product5" src="" alt="Premium Kurta Set">
+
+          </div>
+
+          <div class="product-details">
+
+            <h3>Premium Kurta Set</h3>
+
+            <p>RKS105</p>
+
+            <strong>₹2,799</strong>
+
+          </div>
+
+        </article>
+
+
+      </div>
 
     </section>
 
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- BOTTOM BENEFITS -->
 
-  <footer>
+  <footer class="benefits-bar">
 
-    <div class="footer-brand">
-      RUHIRA
+    <div class="benefit">
+      <span class="benefit-icon">⚜</span>
+      <span>PREMIUM QUALITY</span>
     </div>
 
-    <div>
-      © 2026 Ruhira. All rights reserved.
+    <div class="benefit-divider"></div>
+
+    <div class="benefit">
+      <span class="benefit-icon">↻</span>
+      <span>EASY RETURNS</span>
+    </div>
+
+    <div class="benefit-divider"></div>
+
+    <div class="benefit">
+      <span class="benefit-icon">▣</span>
+      <span>SECURE PAYMENTS</span>
+    </div>
+
+    <div class="benefit-divider"></div>
+
+    <div class="benefit">
+      <span class="benefit-icon">♧</span>
+      <span>CUSTOMER SUPPORT</span>
     </div>
 
   </footer>
+
+
+
+  <script>
+
+    /*
+    ==========================================
+             CLOUDINARY CONFIGURATION
+    ==========================================
+
+    Put your Cloudinary cloud name here.
+
+    The known earlier public ID:
+    RKS101/IMG_1424
+    */
+
+    const CLOUD_NAME = "YOUR_CLOUDINARY_CLOUD_NAME";
+
+
+    /*
+    Replace these public IDs with the exact
+    public IDs from your Cloudinary folders.
+    */
+
+    const images = {
+
+      logo: "ruhira/logo",
+
+      hero: "RKS101/IMG_1424",
+
+      product1: "RKS101/IMG_1424",
+
+      product2: "RKS102/IMG_1424",
+
+      product3: "RKS103/IMG_1424",
+
+      product4: "RKS104/IMG_1424",
+
+      product5: "RKS105/IMG_1424"
+
+    };
+
+
+    /*
+    Creates optimized Cloudinary URL
+    */
+
+    function cloudinary(publicId, width = 1000) {
+
+      return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/f_auto,q_auto,w_${width}/${publicId}`;
+
+    }
+
+
+    /*
+    LOAD LOGO
+    */
+
+    document.getElementById("logoImage").src =
+      cloudinary(images.logo, 500);
+
+
+    /*
+    LOAD HERO
+    */
+
+    document.getElementById("heroImage").src =
+      cloudinary(images.hero, 1000);
+
+
+    /*
+    LOAD PRODUCTS
+    */
+
+    document.getElementById("product1").src =
+      cloudinary(images.product1, 700);
+
+    document.getElementById("product2").src =
+      cloudinary(images.product2, 700);
+
+    document.getElementById("product3").src =
+      cloudinary(images.product3, 700);
+
+    document.getElementById("product4").src =
+      cloudinary(images.product4, 700);
+
+    document.getElementById("product5").src =
+      cloudinary(images.product5, 700);
+
+
+    /*
+    PRODUCT CLICK
+    */
+
+    document.querySelectorAll(".product-card").forEach(card => {
+
+      card.addEventListener("click", function () {
+
+        alert("Product page coming soon");
+
+      });
+
+    });
+
+  </script>
 
 </body>
 </html>
