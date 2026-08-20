@@ -85,11 +85,13 @@ document.addEventListener("DOMContentLoaded", () => {
             0
         );
 
+        const shipping = 99;
+
         subtotalElement.textContent =
             formatPrice(subtotal);
 
         totalElement.textContent =
-            formatPrice(subtotal);
+            formatPrice(subtotal + shipping);
 
     }
 
