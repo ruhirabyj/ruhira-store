@@ -163,15 +163,16 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-        const total =
+        const subtotal =
             calculateTotal(cart);
 
+        const shipping = 99;
 
         subtotalElement.textContent =
-            formatPrice(total);
+            formatPrice(subtotal);
 
         totalElement.textContent =
-            formatPrice(total);
+            formatPrice(subtotal + shipping);
 
 
         updateCartCount(cart);
@@ -290,7 +291,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 items: cart,
 
                 total:
-                    calculateTotal(cart),
+                    calculateTotal(cart) + 99,
 
                 orderDate:
                     new Date()
