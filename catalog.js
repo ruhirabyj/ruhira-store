@@ -4,7 +4,8 @@ const products = {
         id: "RKS101",
         name: "Pink Bloom",
         price: 2199,
-        description: "A charming cotton mul Chanderi kurta set featuring delicate floral embroidery and feather-soft comfort. Effortlessly versatile, it transitions beautifully from office hours to relaxed weekend outings.",        stock: {
+        description: "A charming cotton mul Chanderi kurta set featuring delicate floral embroidery and feather-soft comfort. Effortlessly versatile, it transitions beautifully from office hours to relaxed weekend outings.",   
+        stock: {
             S: 0,
             M: 0,
             L: 1,
@@ -25,7 +26,8 @@ const products = {
         id: "RKS102",
         name: "Forest Grove",
         price: 2199,
-        description: "An elegant premium satin kurta set with a buttery-soft feel and luxurious sheen, complemented by a statement floral dupatta. A graceful choice for occasions that call for effortless elegance.",        stock: {
+        description: "An elegant premium satin kurta set with a buttery-soft feel and luxurious sheen, complemented by a statement floral dupatta. A graceful choice for occasions that call for effortless elegance.",  
+        stock: {
             S: 0,
             M: 1,
             L: 1,
@@ -47,7 +49,8 @@ const products = {
         id: "RKS103",
         name: "Amber Glow",
         price: 2199,
-        description: "A vibrant premium satin kurta set featuring a rich amber hue and statement neckline embroidery. Designed to stand out with its elegant details and luxurious finish.",        stock: {
+        description: "A vibrant premium satin kurta set featuring a rich amber hue and statement neckline embroidery. Designed to stand out with its elegant details and luxurious finish.",   
+        stock: {
             S: 0,
             M: 1,
             L: 1,
@@ -56,10 +59,10 @@ const products = {
             XXXL: 1
         },
         images: [
+            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125256/IMG_1790.jpg",
             "https://res.cloudinary.com/kipwuap2/image/upload/v1787125256/IMG_1788.jpg",
             "https://res.cloudinary.com/kipwuap2/image/upload/v1787125256/IMG_1791.jpg",
             "https://res.cloudinary.com/kipwuap2/image/upload/v1787125256/IMG_1792.jpg",
-            "https://res.cloudinary.com/kipwuap2/image/upload/v1787125256/IMG_1790.jpg",
             "https://res.cloudinary.com/kipwuap2/image/upload/v1787125256/IMG_1794.jpg"
         ]
     },
@@ -68,7 +71,8 @@ const products = {
         id: "RKS104",
         name: "Midnight Noir",
         price: 2299,
-        description: "A timeless black premium georgette kurta set featuring statement leaf motifs on the sleeves and dupatta, with elegant gold butta detailing throughout. Perfect for festivities and evening celebrations.",        stock: {
+        description: "A timeless black premium georgette kurta set featuring statement leaf motifs on the sleeves and dupatta, with elegant gold butta detailing throughout. Perfect for festivities and evening celebrations.",      
+        stock: {
             S: 0,
             M: 1,
             L: 1,
@@ -89,7 +93,8 @@ const products = {
         id: "RKS105",
         name: "Ivory Mist",
         price: 2799,
-        description: "A graceful premium mul Chanderi kurta set featuring a statement yoke and beautifully detailed sleeves. Light, elegant, and made for moments that matter.",        stock: {
+        description: "Crafted from pure Mul Chanderi, Ivory Mist brings a regal touch with its subtle sheen and graceful drape. Detailed with intricate statement embroidery on the yoke and sleeves, it offers effortless, understated sophistication. The complete set includes a kurta, pants, and dupatta.",
+        stock: {
             S: 0,
             M: 1,
             L: 1,
