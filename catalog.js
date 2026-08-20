@@ -10,8 +10,8 @@ const products = {
             M: 0,
             L: 1,
             XL: 1,
-            XXL: 1,
-            XXXL: 1
+            2XL: 1,
+            3XL: 1
         },
         images: [
             "https://res.cloudinary.com/kipwuap2/image/upload/v1787125875/IMG_1424.jpg",
@@ -32,8 +32,8 @@ const products = {
             M: 1,
             L: 1,
             XL: 1,
-            XXL: 1,
-            XXXL: 1
+            2XL: 1,
+            3XL: 1
         },
         images: [
             "https://res.cloudinary.com/kipwuap2/image/upload/v1787125243/IMG_1710.jpg",
@@ -55,8 +55,8 @@ const products = {
             M: 1,
             L: 1,
             XL: 1,
-            XXL: 1,
-            XXXL: 1
+            2XL: 1,
+            3XL: 1
         },
         images: [
             "https://res.cloudinary.com/kipwuap2/image/upload/v1787125256/IMG_1790.jpg",
@@ -77,8 +77,8 @@ const products = {
             M: 1,
             L: 1,
             XL: 1,
-            XXL: 0,
-            XXXL: 1
+            2XL: 0,
+            3XL: 1
         },
         images: [
             "https://res.cloudinary.com/kipwuap2/image/upload/v1787125275/IMG_1636.jpg",
@@ -99,8 +99,8 @@ const products = {
             M: 1,
             L: 1,
             XL: 2,
-            XXL: 0,
-            XXXL: 0
+            2XL: 0,
+            3XL: 0
         },
         images: [
             "https://res.cloudinary.com/kipwuap2/image/upload/v1787125294/IMG_1577.jpg",
