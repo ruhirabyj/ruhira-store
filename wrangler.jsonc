@@ -1,0 +1,16 @@
+{
+  "name": "ruhira-store",
+  "compatibility_date": "2026-08-15",
+
+  "assets": {
+    "directory": "."
+  },
+
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "ruhira-db",
+      "database_id": "0927be55-d52b-4ac9-8092-6c9d45929edc"
+    }
+  ]
+}
