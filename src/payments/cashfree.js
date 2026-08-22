@@ -11,8 +11,8 @@ function getHeaders(env) {
   return {
     "Content-Type": "application/json",
     Accept: "application/json",
-    "x-client-id": env.CASHFREE_APP_ID,
-    "x-client-secret": env.CASHFREE_SECRET_KEY,
+    "x-client-id": env.CF_APP_ID,
+    "x-client-secret": env.CF_SECRET_KEY,
     "x-api-version": "2025-01-01",
   };
 }
