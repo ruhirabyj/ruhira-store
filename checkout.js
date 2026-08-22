@@ -12,6 +12,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================
+       GET CART TOKEN
+    ========================= */
+
+    function getCartToken() {
+
+        let cartToken =
+            localStorage.getItem(
+                "ruhiraCartToken"
+            );
+
+        if (!cartToken) {
+
+            cartToken =
+                crypto.randomUUID();
+
+            localStorage.setItem(
+                "ruhiraCartToken",
+                cartToken
+            );
+
+        }
+
+        return cartToken;
+
+    }
+
+
+    /* =========================
        PAGE ELEMENTS
     ========================= */
 
@@ -39,7 +67,11 @@ document.addEventListener("DOMContentLoaded", () => {
     ========================= */
 
     function formatPrice(price) {
-        return "₹" + price.toLocaleString("en-IN");
+
+        return "₹" +
+            Number(price)
+                .toLocaleString("en-IN");
+
     }
 
 
@@ -50,12 +82,16 @@ document.addEventListener("DOMContentLoaded", () => {
     function updateCartCount(cart) {
 
         const totalItems = cart.reduce(
-            (total, item) => total + item.quantity,
+            (total, item) =>
+                total + item.quantity,
             0
         );
 
         cartCountElements.forEach(element => {
-            element.textContent = totalItems;
+
+            element.textContent =
+                totalItems;
+
         });
 
     }
@@ -71,7 +107,10 @@ document.addEventListener("DOMContentLoaded", () => {
             (total, item) => {
 
                 return total +
-                    (item.price * item.quantity);
+                    (
+                        Number(item.price) *
+                        Number(item.quantity)
+                    );
 
             },
             0
@@ -86,7 +125,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function loadCheckout() {
 
-        const cart = getCart();
+        const cart =
+            getCart();
 
         checkoutItems.innerHTML = "";
 
@@ -98,7 +138,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (cart.length === 0) {
 
-            window.location.href = "cart.html";
+            window.location.href =
+                "cart.html";
 
             return;
 
@@ -108,7 +149,8 @@ document.addEventListener("DOMContentLoaded", () => {
         cart.forEach(item => {
 
             const itemTotal =
-                item.price * item.quantity;
+                Number(item.price) *
+                Number(item.quantity);
 
 
             const checkoutItem =
@@ -166,13 +208,16 @@ document.addEventListener("DOMContentLoaded", () => {
         const subtotal =
             calculateTotal(cart);
 
-        const shipping = 99;
+        const shipping =
+            99;
 
         subtotalElement.textContent =
             formatPrice(subtotal);
 
         totalElement.textContent =
-            formatPrice(subtotal + shipping);
+            formatPrice(
+                subtotal + shipping
+            );
 
 
         updateCartCount(cart);
@@ -186,12 +231,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     checkoutForm.addEventListener(
         "submit",
-        event => {
+        async event => {
 
             event.preventDefault();
 
 
-            const cart = getCart();
+            const cart =
+                getCart();
 
 
             if (cart.length === 0) {
@@ -205,26 +251,58 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             /*
-               Get customer information
+               Validate cart data.
             */
 
+            for (const item of cart) {
+
+                if (
+                    !item.product_id ||
+                    !item.variant_id ||
+                    !item.quantity
+                ) {
+
+                    alert(
+                        "Your cart contains an invalid item. Please remove it and add the product again."
+                    );
+
+                    return;
+
+                }
+
+            }
+
+
+            /*
+               Get customer information.
+
+               Map the frontend field names
+               to the fields expected by
+               /api/orders.
+            */
+
+            const firstName =
+                document
+                    .getElementById("first-name")
+                    .value
+                    .trim();
+
+            const lastName =
+                document
+                    .getElementById("last-name")
+                    .value
+                    .trim();
+
+
             const customer = {
+
+                name:
+                    `${firstName} ${lastName}`
+                        .trim(),
 
                 email:
                     document
                         .getElementById("email")
-                        .value
-                        .trim(),
-
-                firstName:
-                    document
-                        .getElementById("first-name")
-                        .value
-                        .trim(),
-
-                lastName:
-                    document
-                        .getElementById("last-name")
                         .value
                         .trim(),
 
@@ -234,13 +312,13 @@ document.addEventListener("DOMContentLoaded", () => {
                         .value
                         .trim(),
 
-                address:
+                address_line1:
                     document
                         .getElementById("address")
                         .value
                         .trim(),
 
-                landmark:
+                address_line2:
                     document
                         .getElementById("landmark")
                         .value
@@ -268,58 +346,256 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             /*
-               Generate order number
+               Convert cart items to the
+               format expected by /api/orders.
             */
 
-            const orderNumber =
-                "RUH" +
-                Date.now()
-                    .toString()
-                    .slice(-8);
+            const orderItems =
+                cart.map(item => ({
 
+                    product_id:
+                        Number(
+                            item.product_id
+                        ),
 
-            /*
-               Create complete order
-            */
+                    variant_id:
+                        Number(
+                            item.variant_id
+                        ),
 
-            const order = {
-
-                orderNumber: orderNumber,
-
-                customer: customer,
-
-                items: cart,
-
-                total:
-                    calculateTotal(cart) + 99,
-
-                orderDate:
-                    new Date()
-                        .toLocaleString(
-                            "en-IN"
+                    quantity:
+                        Number(
+                            item.quantity
                         )
 
-            };
+                }));
 
 
-            /*
-               Save order temporarily.
-               The confirmation page
-               will use this data.
-            */
+            const submitButton =
+                checkoutForm.querySelector(
+                    'button[type="submit"]'
+                );
 
-            localStorage.setItem(
-                "ruhiraLatestOrder",
-                JSON.stringify(order)
-            );
 
-            /*
-               Redirect customer to
-               UPI payment page
-            */
-            
-            window.location.href =
-                "payment.html";
+            const originalButtonText =
+                submitButton
+                    ? submitButton.textContent
+                    : "";
+
+
+            try {
+
+                /*
+                   Prevent duplicate clicks.
+                */
+
+                if (submitButton) {
+
+                    submitButton.disabled =
+                        true;
+
+                    submitButton.textContent =
+                        "PROCESSING...";
+
+                }
+
+
+                const cartToken =
+                    getCartToken();
+
+
+                /*
+                   STEP 1
+
+                   Create the order in D1.
+
+                   The backend will validate:
+                   - product
+                   - variant
+                   - stock
+                   - reservation
+                   - real price
+                */
+
+                const orderResponse =
+                    await fetch(
+                        "/api/orders",
+                        {
+
+                            method:
+                                "POST",
+
+                            headers: {
+
+                                "Content-Type":
+                                    "application/json",
+
+                                "X-Cart-Token":
+                                    cartToken
+
+                            },
+
+                            body:
+                                JSON.stringify({
+
+                                    customer:
+                                        customer,
+
+                                    items:
+                                        orderItems
+
+                                })
+
+                        }
+                    );
+
+
+                const orderData =
+                    await orderResponse.json();
+
+
+                if (!orderResponse.ok) {
+
+                    throw new Error(
+                        orderData.error ||
+                        "Unable to create order"
+                    );
+
+                }
+
+
+                if (
+                    !orderData.success ||
+                    !orderData.order ||
+                    !orderData.order.id
+                ) {
+
+                    throw new Error(
+                        "Order creation failed"
+                    );
+
+                }
+
+
+                /*
+                   STEP 2
+
+                   Create Cashfree checkout
+                   using the real D1 order ID.
+                */
+
+                const checkoutResponse =
+                    await fetch(
+                        "/api/checkout/create",
+                        {
+
+                            method:
+                                "POST",
+
+                            headers: {
+
+                                "Content-Type":
+                                    "application/json"
+
+                            },
+
+                            body:
+                                JSON.stringify({
+
+                                    order_id:
+                                        orderData
+                                            .order
+                                            .id
+
+                                })
+
+                        }
+                    );
+
+
+                const checkoutData =
+                    await checkoutResponse
+                        .json();
+
+
+                if (
+                    !checkoutResponse.ok
+                ) {
+
+                    throw new Error(
+                        checkoutData.error ||
+                        "Unable to create payment"
+                    );
+
+                }
+
+
+                /*
+                   Save the real order and
+                   Cashfree session information.
+
+                   payment.js can use this
+                   instead of a fake order.
+                */
+
+                const order = {
+
+                    ...orderData.order,
+
+                    customer:
+                        customer,
+
+                    items:
+                        cart,
+
+                    provider:
+                        checkoutData.provider,
+
+                    payment_session_id:
+                        checkoutData
+                            .payment_session_id
+
+                };
+
+
+                localStorage.setItem(
+                    "ruhiraLatestOrder",
+                    JSON.stringify(order)
+                );
+
+
+                /*
+                   Redirect to payment page.
+                */
+
+                window.location.href =
+                    "payment.html";
+
+
+            } catch (error) {
+
+                console.error(
+                    "Checkout failed:",
+                    error
+                );
+
+                alert(
+                    error.message ||
+                    "Unable to place your order. Please try again."
+                );
+
+
+                if (submitButton) {
+
+                    submitButton.disabled =
+                        false;
+
+                    submitButton.textContent =
+                        originalButtonText;
+
+                }
+
+            }
 
         }
     );
