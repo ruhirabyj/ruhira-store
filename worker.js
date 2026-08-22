@@ -1,4 +1,6 @@
 import { handleOrders } from "./handlers/orders.js";
+import { handleCheckout } from "./handlers/checkout.js";
+import { handlePayments } from "./handlers/payments.js";
 
 import {
   json,
@@ -81,16 +83,27 @@ export default {
         return handleOrders(request, env, url);
       }
 
-      // Future checkout APIs
+      // Checkout APIs
       if (
         url.pathname.startsWith("/api/checkout/")
       ) {
-        return json({
-          message:
-            "Checkout API not implemented yet",
-        });
+        return handleCheckout(
+          request,
+          env,
+          url
+        );
       }
-
+      
+      // Payment APIs
+      if (
+        url.pathname.startsWith("/api/payments/")
+      ) {
+        return handlePayments(
+          request,
+          env,
+          url
+        );
+      }
       // Future admin APIs
       if (
         url.pathname.startsWith("/api/admin/")

@@ -127,12 +127,75 @@ export async function getPaymentStatus(env, order) {
   };
 }
 
-export async function verifyWebhook(env, request) {
-  // We will implement proper Cashfree signature verification
-  // when we add the webhook endpoint.
+export async function verifyWebhook(
+  env,
+  request
+) {
+  const signature =
+    request.headers.get(
+      "x-webhook-signature"
+    );
 
-  return {
-    verified: false,
-    message: "Webhook verification not implemented yet",
-  };
+  const timestamp =
+    request.headers.get(
+      "x-webhook-timestamp"
+    );
+
+  if (!signature || !timestamp) {
+    return {
+      verified: false,
+      error:
+        "Missing webhook signature or timestamp",
+    };
+  }
+
+  const rawBody = await request.text();
+
+  const key = await crypto.subtle.importKey(
+    "raw",
+    new TextEncoder().encode(
+      env.CF_SECRET_KEY
+    ),
+    {
+      name: "HMAC",
+      hash: "SHA-256",
+    },
+    false,
+    ["sign"]
+  );
+
+  const signatureBuffer =
+    await crypto.subtle.sign(
+      "HMAC",
+      key,
+      new TextEncoder().encode(
+        timestamp + rawBody
+      )
+    );
+
+  const generatedSignature =
+    btoa(
+      String.fromCharCode(
+        ...new Uint8Array(signatureBuffer)
+      )
+    );
+
+  if (generatedSignature !== signature) {
+    return {
+      verified: false,
+      error: "Invalid webhook signature",
+    };
+  }
+
+  try {
+    return {
+      verified: true,
+      payload: JSON.parse(rawBody),
+    };
+  } catch {
+    return {
+      verified: false,
+      error: "Invalid webhook JSON",
+    };
+  }
 }
