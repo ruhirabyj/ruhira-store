@@ -1,3 +1,5 @@
+import { handleOrders } from "./handlers/orders.js";
+
 import {
   json,
   unauthorized,
@@ -67,14 +69,13 @@ export default {
         );
       }
 
-      // Future order APIs
+      // order APIs
       if (
+        url.pathname === "/api/orders" ||
+        url.pathname === "/api/orders/" ||
         url.pathname.startsWith("/api/orders/")
       ) {
-        return json({
-          message:
-            "Orders API not implemented yet",
-        });
+        return handleOrders(request, env, url);
       }
 
       // Future checkout APIs
