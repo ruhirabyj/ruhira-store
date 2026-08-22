@@ -12,3 +12,8 @@ run_worker_first = ["/api/*"]
 binding = "DB"
 database_name = "ruhira-db"
 database_id = "0927be55-d52b-4ac9-8092-6c9d45929edc"
+
+[vars]
+PAYMENT_PROVIDER = "cashfree"
+PAYMENT_ENV = "sandbox"
+APP_URL = "https://ruhira-store.ruhirabyj.workers.dev"
