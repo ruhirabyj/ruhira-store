@@ -56,7 +56,8 @@ export default {
       ) {
         return handleCart(
           request,
-          env
+          env,
+	  url
         );
       }
 

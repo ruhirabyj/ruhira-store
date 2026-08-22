@@ -1,3 +1,7 @@
+import {
+  cleanupExpiredReservations,
+} from "../src/cart/reservations.js";
+
 const json = (data, status = 200) =>
   new Response(JSON.stringify(data), {
     status,
@@ -53,6 +57,18 @@ async function handleCreateOrder(request, env) {
 
   const customer = body.customer;
   const items = body.items;
+
+  const cartToken =
+    request.headers.get("X-Cart-Token");
+  
+  if (!cartToken) {
+    return json(
+      { error: "Cart token is required" },
+      400
+    );
+  }
+  
+  await cleanupExpiredReservations(env);
 
   if (!customer || typeof customer !== "object") {
     return json(
@@ -279,22 +295,60 @@ async function handleCreateOrder(request, env) {
     generateOrderNumber();
 
   /*
-   * Stock reservation and order creation happen together.
-   *
-   * The stock condition is checked again inside D1 so that
-   * another customer cannot buy stock that was already taken
-   * between our earlier validation and this operation.
+   * The customer can only create an order using stock
+   * actively reserved by their cart.
    */
   const stockConditions = validatedItems
     .map(
-      () =>
-        "(id = ? AND stock_quantity >= ?)"
+      () => `
+        (
+          id = ?
+          AND stock_quantity >=
+            ? + COALESCE(
+              (
+                SELECT SUM(quantity)
+                FROM cart_reservations
+                WHERE variant_id = ?
+                  AND cart_token != ?
+                  AND expires_at > CURRENT_TIMESTAMP
+              ),
+              0
+            )
+        )
+      `
     )
     .join(" OR ");
 
   const stockConditionBindings =
     validatedItems.flatMap((item) => [
       item.variant_id,
+      item.quantity,
+      item.variant_id,
+      cartToken,
+    ]);
+
+  /*
+   * Every item must have an active reservation
+   * belonging to this cart.
+   */
+  const reservationConditions =
+    validatedItems
+      .map(
+        () => `
+          (
+            variant_id = ?
+            AND cart_token = ?
+            AND quantity >= ?
+            AND expires_at > CURRENT_TIMESTAMP
+          )
+        `
+      )
+      .join(" OR ");
+
+  const reservationBindings =
+    validatedItems.flatMap((item) => [
+      item.variant_id,
+      cartToken,
       item.quantity,
     ]);
 
@@ -309,8 +363,10 @@ async function handleCreateOrder(request, env) {
     ]);
 
   /*
-   * First statement creates the order only if every variant
-   * still has enough stock.
+   * Create the order only if:
+   *
+   * 1. Stock is available after considering other carts.
+   * 2. This cart owns sufficient active reservations.
    */
   const createOrderStatement = env.DB
     .prepare(`
@@ -352,6 +408,11 @@ async function handleCreateOrder(request, env) {
         FROM product_variants
         WHERE ${stockConditions}
       ) = ?
+      AND (
+        SELECT COUNT(*)
+        FROM cart_reservations
+        WHERE ${reservationConditions}
+      ) = ?
     `)
     .bind(
       orderNumber,
@@ -372,6 +433,8 @@ async function handleCreateOrder(request, env) {
       discountAmount,
       totalAmount,
       ...stockConditionBindings,
+      validatedItems.length,
+      ...reservationBindings,
       validatedItems.length
     );
 
@@ -440,10 +503,33 @@ async function handleCreateOrder(request, env) {
       orderNumber
     );
 
+  /*
+   * Remove only the reservations that were converted
+   * into this successful order.
+   */
+  const releaseOrderReservationsStatement =
+    env.DB
+      .prepare(`
+        DELETE FROM cart_reservations
+        WHERE cart_token = ?
+          AND variant_id IN (${placeholders})
+          AND EXISTS (
+            SELECT 1
+            FROM orders
+            WHERE order_number = ?
+          )
+      `)
+      .bind(
+        cartToken,
+        ...variantIds,
+        orderNumber
+      );
+
   await env.DB.batch([
     createOrderStatement,
     ...orderItemStatements,
     reduceStockStatement,
+    releaseOrderReservationsStatement,
   ]);
 
   /*

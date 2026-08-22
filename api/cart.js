@@ -14,9 +14,9 @@ function getCartToken(request) {
 
 export async function handleCart(
   request,
-  env
+  env,
+  url
 ) {
-  const url = new URL(request.url);
   const path = url.pathname;
   const cartToken = getCartToken(request);
 
