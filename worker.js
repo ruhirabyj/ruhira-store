@@ -161,6 +161,7 @@ async function getProductByField(env, field, value) {
       .all();
 
     option.values = values.map((item) => item.value);
+
     delete option.display_order;
   }
 
@@ -183,7 +184,10 @@ async function handleProducts(request, env, url) {
   }
 
   // GET /api/products
-  if (path === "/api/products" || path === "/api/products/") {
+  if (
+    path === "/api/products" ||
+    path === "/api/products/"
+  ) {
     const products = await getAllProducts(env);
 
     return json(products);
@@ -243,24 +247,99 @@ async function handleProducts(request, env, url) {
   );
 }
 
+async function handleShipping(request, env) {
+  if (request.method !== "POST") {
+    return json(
+      { error: "Method not allowed" },
+      405
+    );
+  }
+
+  const body = await request.json();
+  const subtotal = Number(body.subtotal);
+
+  if (
+    !Number.isFinite(subtotal) ||
+    subtotal < 0
+  ) {
+    return json(
+      { error: "A valid subtotal is required" },
+      400
+    );
+  }
+
+  const { results: settings } = await env.DB
+    .prepare(`
+      SELECT key, value
+      FROM settings
+      WHERE key IN (
+        'shipping_cost',
+        'free_shipping_threshold'
+      )
+    `)
+    .all();
+
+  const config = {};
+
+  for (const setting of settings) {
+    config[setting.key] = Number(setting.value);
+  }
+
+  const shippingCost =
+    config.shipping_cost ?? 0;
+
+  const freeShippingThreshold =
+    config.free_shipping_threshold ?? 0;
+
+  let finalShippingCost = shippingCost;
+
+  if (
+    freeShippingThreshold > 0 &&
+    subtotal >= freeShippingThreshold
+  ) {
+    finalShippingCost = 0;
+  }
+
+  return json({
+    subtotal,
+    shipping_cost: finalShippingCost,
+    free_shipping_threshold:
+      freeShippingThreshold,
+    total: subtotal + finalShippingCost,
+  });
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
     try {
       // Admin authentication
-      if (url.pathname.startsWith("/api/admin/")) {
-        if (!validateAdminToken(request, env)) {
+      if (
+        url.pathname.startsWith("/api/admin/")
+      ) {
+        if (
+          !validateAdminToken(request, env)
+        ) {
           return unauthorized();
         }
       }
 
       // Product APIs
-      if (url.pathname.startsWith("/api/products")) {
-        return handleProducts(request, env, url);
+      if (
+        url.pathname.startsWith("/api/products")
+      ) {
+        return handleProducts(
+          request,
+          env,
+          url
+        );
       }
 
-      if (url.pathname === "/api/cart/validate") {
+      // Cart validation API
+      if (
+        url.pathname === "/api/cart/validate"
+      ) {
         if (request.method !== "POST") {
           return json(
             { error: "Method not allowed" },
@@ -270,9 +349,15 @@ export default {
 
         const body = await request.json();
 
-        if (!body.items || !Array.isArray(body.items)) {
+        if (
+          !body.items ||
+          !Array.isArray(body.items)
+        ) {
           return json(
-            { error: "items must be an array" },
+            {
+              error:
+                "items must be an array",
+            },
             400
           );
         }
@@ -281,7 +366,7 @@ export default {
           return json({
             valid: true,
             items: [],
-            subtotal: 0
+            subtotal: 0,
           });
         }
 
@@ -289,8 +374,11 @@ export default {
         let subtotal = 0;
 
         for (const item of body.items) {
-          const variantId = Number(item.variant_id);
-          const quantity = Number(item.quantity);
+          const variantId =
+            Number(item.variant_id);
+
+          const quantity =
+            Number(item.quantity);
 
           if (
             !Number.isInteger(variantId) ||
@@ -300,7 +388,8 @@ export default {
           ) {
             return json(
               {
-                error: "Each item must have a valid variant_id and quantity"
+                error:
+                  "Each item must have a valid variant_id and quantity",
               },
               400
             );
@@ -318,7 +407,8 @@ export default {
                 p.is_active,
                 pv.is_active AS variant_active
               FROM product_variants pv
-              JOIN products p ON p.id = pv.product_id
+              JOIN products p
+                ON p.id = pv.product_id
               WHERE pv.id = ?
             `)
             .bind(variantId)
@@ -331,76 +421,114 @@ export default {
           ) {
             return json(
               {
-                error: "Product is no longer available",
-                variant_id: variantId
+                error:
+                  "Product is no longer available",
+                variant_id: variantId,
               },
               400
             );
           }
 
-          if (variant.stock_quantity < quantity) {
+          if (
+            variant.stock_quantity < quantity
+          ) {
             return json(
               {
                 error: "Insufficient stock",
                 variant_id: variantId,
-                available_stock: variant.stock_quantity
+                available_stock:
+                  variant.stock_quantity,
               },
               400
             );
           }
 
-          const itemTotal = variant.price * quantity;
+          const itemTotal =
+            variant.price * quantity;
 
           subtotal += itemTotal;
 
           validatedItems.push({
-            product_id: variant.product_id,
-            variant_id: variant.variant_id,
+            product_id:
+              variant.product_id,
+            variant_id:
+              variant.variant_id,
             name: variant.name,
             size: variant.size,
             price: variant.price,
             quantity,
             item_total: itemTotal,
-            available_stock: variant.stock_quantity
+            available_stock:
+              variant.stock_quantity,
           });
         }
 
         return json({
           valid: true,
           items: validatedItems,
-          subtotal
+          subtotal,
         });
       }
 
-      if (url.pathname.startsWith("/api/orders/")) {
+      // Shipping API
+      if (
+        url.pathname ===
+        "/api/shipping/calculate"
+      ) {
+        return handleShipping(
+          request,
+          env
+        );
+      }
+
+      // Future order APIs
+      if (
+        url.pathname.startsWith("/api/orders/")
+      ) {
         return json({
-          message: "Orders API not implemented yet",
+          message:
+            "Orders API not implemented yet",
         });
       }
 
-      if (url.pathname.startsWith("/api/checkout/")) {
+      // Future checkout APIs
+      if (
+        url.pathname.startsWith("/api/checkout/")
+      ) {
         return json({
-          message: "Checkout API not implemented yet",
+          message:
+            "Checkout API not implemented yet",
         });
       }
 
-      if (url.pathname.startsWith("/api/admin/")) {
+      // Future admin APIs
+      if (
+        url.pathname.startsWith("/api/admin/")
+      ) {
         return json({
-          message: "Admin API not implemented yet",
+          message:
+            "Admin API not implemented yet",
         });
       }
 
-      if (url.pathname.startsWith("/api/")) {
+      // Unknown API
+      if (
+        url.pathname.startsWith("/api/")
+      ) {
         return json(
           { error: "API endpoint not found" },
           404
         );
       }
 
+      // Static frontend files
       return env.ASSETS.fetch(request);
 
     } catch (error) {
-      console.error("Worker error:", error);
+      console.error(
+        "Worker error:",
+        error
+      );
 
       return json(
         {
