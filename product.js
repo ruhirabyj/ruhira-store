@@ -16,51 +16,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
     /* =========================================
-       PAGE ELEMENTS
-    ========================================= */
-
-    const productName =
-        document.getElementById("product-name");
-
-    const productCode =
-        document.getElementById("product-code");
-
-    const productPrice =
-        document.getElementById("product-price");
-
-    const breadcrumbProduct =
-        document.getElementById("breadcrumb-product");
-
-    const productDescription =
-        document.getElementById("product-description");
-
-    const mainImage =
-        document.getElementById("main-product-image");
-
-    const thumbnailsContainer =
-        document.getElementById("product-thumbnails");
-
-    const sizeButtons =
-        document.querySelectorAll(".size-button");
-
-    const quantityElement =
-        document.getElementById("quantity");
-
-    const increaseButton =
-        document.getElementById("increase-quantity");
-
-    const decreaseButton =
-        document.getElementById("decrease-quantity");
-
-    const addToCartButton =
-        document.getElementById("add-to-cart");
-
-    const buyNowButton =
-        document.getElementById("buy-now");
-
-
-    /* =========================================
-       LOAD PRODUCT FROM API
+       LOAD PRODUCTS FROM API
     ========================================= */
 
     let products;
@@ -86,8 +42,26 @@ document.addEventListener("DOMContentLoaded", async () => {
             error
         );
 
-        alert(
-            "Unable to load product. Please refresh the page."
+        return;
+
+    }
+
+
+    /* =========================================
+       GET SELECTED PRODUCT
+    ========================================= */
+
+    const product = products.find(
+        item =>
+            item.product_code ===
+            selectedProduct.id
+    );
+
+    if (!product) {
+
+        console.error(
+            "Product not found:",
+            selectedProduct.id
         );
 
         return;
@@ -95,21 +69,44 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
 
-    const product = products.find(
-        item =>
-            item.product_code === selectedProduct.id
-    );
+    /* =========================================
+       PAGE ELEMENTS
+    ========================================= */
 
+    const productName =
+        document.getElementById(
+            "product-name"
+        );
 
-    if (!product) {
+    const productCode =
+        document.getElementById(
+            "product-code"
+        );
 
-        alert("Product not found.");
+    const productPrice =
+        document.getElementById(
+            "product-price"
+        );
 
-        window.location.href = "index.html";
+    const breadcrumbProduct =
+        document.getElementById(
+            "breadcrumb-product"
+        );
 
-        return;
+    const productDescription =
+        document.getElementById(
+            "product-description"
+        );
 
-    }
+    const mainImage =
+        document.getElementById(
+            "main-product-image"
+        );
+
+    const thumbnailsContainer =
+        document.getElementById(
+            "product-thumbnails"
+        );
 
 
     /* =========================================
@@ -134,92 +131,205 @@ document.addEventListener("DOMContentLoaded", async () => {
         product.name;
 
     document.title =
-        product.name + " | Ruhira";
+        product.name +
+        " | Ruhira";
 
 
     /* =========================================
-       LOAD IMAGES
+       LOAD MAIN IMAGE
     ========================================= */
 
-    const productImages =
-        product.images.map(
-            image => image.url
+    if (
+        product.images &&
+        product.images.length > 0
+    ) {
+
+        mainImage.src =
+            product.images[0].url;
+
+        mainImage.alt =
+            product.name;
+
+    }
+
+
+    /* =========================================
+       CREATE THUMBNAILS
+    ========================================= */
+
+    if (
+        product.images &&
+        product.images.length > 0
+    ) {
+
+        product.images.forEach(
+            (imageData, index) => {
+
+                const imageUrl =
+                    imageData.url;
+
+                const thumbnailButton =
+                    document.createElement(
+                        "button"
+                    );
+
+                thumbnailButton.type =
+                    "button";
+
+                thumbnailButton.className =
+                    "thumbnail-button";
+
+                if (index === 0) {
+
+                    thumbnailButton.classList.add(
+                        "active"
+                    );
+
+                }
+
+
+                const image =
+                    document.createElement(
+                        "img"
+                    );
+
+                image.src =
+                    imageUrl;
+
+                image.alt =
+                    product.name +
+                    " image " +
+                    (index + 1);
+
+
+                thumbnailButton.appendChild(
+                    image
+                );
+
+                thumbnailsContainer.appendChild(
+                    thumbnailButton
+                );
+
+
+                thumbnailButton.addEventListener(
+                    "click",
+                    () => {
+
+                        mainImage.src =
+                            imageUrl;
+
+
+                        document
+                            .querySelectorAll(
+                                ".thumbnail-button"
+                            )
+                            .forEach(
+                                button => {
+
+                                    button
+                                        .classList
+                                        .remove(
+                                            "active"
+                                        );
+
+                                }
+                            );
+
+
+                        thumbnailButton
+                            .classList
+                            .add(
+                                "active"
+                            );
+
+                    }
+                );
+
+            }
         );
 
-
-    mainImage.src =
-        productImages[0];
-
-    mainImage.alt =
-        product.name;
+    }
 
 
-    productImages.forEach(
-        (imageUrl, index) => {
+    /* =========================================
+       SIZE SELECTION
+    ========================================= */
 
-            const thumbnailButton =
-                document.createElement("button");
+    const sizeButtons =
+        document.querySelectorAll(
+            ".size-button"
+        );
 
-            thumbnailButton.type =
-                "button";
+    let selectedSize = null;
 
-            thumbnailButton.className =
-                "thumbnail-button";
+    let selectedVariantId = null;
 
-            if (index === 0) {
 
-                thumbnailButton.classList.add(
-                    "active"
+    sizeButtons.forEach(
+        button => {
+
+            const size =
+                button.textContent.trim();
+
+            const variant =
+                product.variants.find(
+                    item =>
+                        item.size === size
+                );
+
+
+            if (
+                !variant ||
+                Number(variant.stock) <= 0
+            ) {
+
+                button.disabled = true;
+
+                button.classList.add(
+                    "disabled"
                 );
 
             }
 
 
-            const image =
-                document.createElement("img");
-
-            image.src =
-                imageUrl;
-
-            image.alt =
-                product.name +
-                " image " +
-                (index + 1);
-
-
-            thumbnailButton.appendChild(
-                image
-            );
-
-            thumbnailsContainer.appendChild(
-                thumbnailButton
-            );
-
-
-            thumbnailButton.addEventListener(
+            button.addEventListener(
                 "click",
                 () => {
 
-                    mainImage.src =
-                        imageUrl;
+                    if (
+                        button.disabled
+                    ) {
+
+                        return;
+
+                    }
 
 
-                    document
-                        .querySelectorAll(
-                            ".thumbnail-button"
-                        )
-                        .forEach(button => {
+                    sizeButtons.forEach(
+                        sizeButton => {
 
-                            button.classList.remove(
-                                "active"
-                            );
+                            sizeButton
+                                .classList
+                                .remove(
+                                    "active"
+                                );
 
-                        });
-
-
-                    thumbnailButton.classList.add(
-                        "active"
+                        }
                     );
+
+
+                    button
+                        .classList
+                        .add(
+                            "active"
+                        );
+
+
+                    selectedSize =
+                        size;
+
+                    selectedVariantId =
+                        variant.id;
 
                 }
             );
@@ -229,85 +339,25 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
     /* =========================================
-       SIZE SELECTION
-    ========================================= */
-
-    let selectedSize =
-        null;
-
-    let selectedVariantId =
-        null;
-
-
-    sizeButtons.forEach(button => {
-
-        const size =
-            button.textContent.trim();
-
-
-        const variant =
-            product.variants.find(
-                item => item.size === size
-            );
-
-
-        if (
-            !variant ||
-            variant.stock <= 0
-        ) {
-
-            button.disabled =
-                true;
-
-            button.classList.add(
-                "disabled"
-            );
-
-        }
-
-
-        button.addEventListener(
-            "click",
-            () => {
-
-                if (button.disabled) {
-                    return;
-                }
-
-
-                sizeButtons.forEach(
-                    sizeButton => {
-
-                        sizeButton.classList.remove(
-                            "active"
-                        );
-
-                    }
-                );
-
-
-                button.classList.add(
-                    "active"
-                );
-
-                selectedSize =
-                    size;
-
-                selectedVariantId =
-                    variant.id;
-
-            }
-        );
-
-    });
-
-
-    /* =========================================
        QUANTITY
     ========================================= */
 
-    let quantity =
-        1;
+    const quantityElement =
+        document.getElementById(
+            "quantity"
+        );
+
+    const increaseButton =
+        document.getElementById(
+            "increase-quantity"
+        );
+
+    const decreaseButton =
+        document.getElementById(
+            "decrease-quantity"
+        );
+
+    let quantity = 1;
 
 
     increaseButton.addEventListener(
@@ -363,7 +413,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         const totalItems =
             cart.reduce(
                 (total, item) =>
-                    total + item.quantity,
+                    total +
+                    item.quantity,
                 0
             );
 
@@ -372,12 +423,14 @@ document.addEventListener("DOMContentLoaded", async () => {
             .querySelectorAll(
                 ".cart-count"
             )
-            .forEach(cartCount => {
+            .forEach(
+                cartCount => {
 
-                cartCount.textContent =
-                    totalItems;
+                    cartCount.textContent =
+                        totalItems;
 
-            });
+                }
+            );
 
     }
 
@@ -389,14 +442,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
         const existingProduct =
-            cart.find(item => {
+            cart.find(
+                item => {
 
-                return (
-                    item.variant_id ===
-                    selectedVariantId
-                );
+                    return (
+                        item.variant_id ===
+                        selectedVariantId
+                    );
 
-            });
+                }
+            );
 
 
         if (existingProduct) {
@@ -411,6 +466,9 @@ document.addEventListener("DOMContentLoaded", async () => {
                 id:
                     product.product_code,
 
+                product_id:
+                    product.id,
+
                 variant_id:
                     selectedVariantId,
 
@@ -421,7 +479,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     Number(product.price),
 
                 image:
-                    productImages[0],
+                    product.images[0].url,
 
                 size:
                     selectedSize,
@@ -449,6 +507,12 @@ document.addEventListener("DOMContentLoaded", async () => {
        ADD TO CART
     ========================================= */
 
+    const addToCartButton =
+        document.getElementById(
+            "add-to-cart"
+        );
+
+
     addToCartButton.addEventListener(
         "click",
         () => {
@@ -474,12 +538,15 @@ document.addEventListener("DOMContentLoaded", async () => {
                 "ADDED TO CART ✓";
 
 
-            setTimeout(() => {
+            setTimeout(
+                () => {
 
-                addToCartButton.textContent =
-                    "ADD TO CART";
+                    addToCartButton.textContent =
+                        "ADD TO CART";
 
-            }, 1500);
+                },
+                1500
+            );
 
         }
     );
@@ -488,6 +555,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     /* =========================================
        BUY NOW
     ========================================= */
+
+    const buyNowButton =
+        document.getElementById(
+            "buy-now"
+        );
+
 
     buyNowButton.addEventListener(
         "click",
@@ -508,6 +581,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
             addProductToCart();
+
 
             window.location.href =
                 "cart.html";
