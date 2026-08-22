@@ -48,9 +48,11 @@ export default {
         );
       }
 
-      // Cart validation API
+      // Cart APIs
       if (
-        url.pathname === "/api/cart/validate"
+        url.pathname === "/api/cart" ||
+        url.pathname === "/api/cart/" ||
+        url.pathname.startsWith("/api/cart/")
       ) {
         return handleCart(
           request,
